@@ -1,0 +1,51 @@
+echo "Début de la démo"
+
+echo "Création des activitées"
+create-activity Ski 3 12
+create-activity Piscine 3 6
+
+echo "Création d'un client"
+register Elias 8969831113
+
+
+echo "Reservation d'une activité"
+book-activity Ski Elias
+
+echo "Affichage du clients"
+customers
+
+echo "Création d'un autre client"
+register Wassim 8969831112
+
+echo "Reservation de groupe"
+book-group-activity Piscine Elias,Wassim
+
+echo "Affichage des clients"
+customers
+
+echo "Affichage des reservations"
+list-bookings
+
+echo "Création d'un client avec une carte non valide"
+register ClientNonValide 1111111111
+
+echo "ERROR 400: Tentative de payement avec une carte bancaire non valide"
+book-activity Ski ClientNonValide
+
+echo "Reservation d'une activité avec un nombre d'entrée précis"
+book-entry 2 Ski Elias
+
+echo "Affichage des clients"
+customers
+
+echo "ERROR : Tentative de reservation d'une activité qui n'a pas assez de place"
+book-entry 2 Ski Elias
+
+echo "Affichage des clients"
+customers
+
+
+
+
+
+

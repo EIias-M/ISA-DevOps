@@ -1,0 +1,2176 @@
+** Building all
+Compiling the TCF Spring BACKEND within a multi-stage docker build
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 780B 0.0s done
+#1 DONE 0.0s
+
+#2 [internal] load .dockerignore
+#2 transferring context: 2B done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/eclipse-temurin:17-jre-jammy
+#3 ...
+
+#4 [auth] library/eclipse-temurin:pull token for registry-1.docker.io
+#4 DONE 0.0s
+
+#5 [internal] load metadata for docker.io/library/eclipse-temurin:17-jdk-jammy
+#5 ...
+
+#3 [internal] load metadata for docker.io/library/eclipse-temurin:17-jre-jammy
+#3 DONE 1.4s
+
+#5 [internal] load metadata for docker.io/library/eclipse-temurin:17-jdk-jammy
+#5 DONE 1.4s
+
+#6 [builder 1/7] FROM docker.io/library/eclipse-temurin:17-jdk-jammy@sha256:721e57dee9ae41be4791f3c7da8250c41086551790fdd8b10c30bb4c9577ba8e
+#6 DONE 0.0s
+
+#7 [stage-1 1/5] FROM docker.io/library/eclipse-temurin:17-jre-jammy@sha256:c1dd17f6b753f0af572069fb80dcacdc687f5d1ae3e05c98d5f699761b84a10a
+#7 DONE 0.0s
+
+#8 [internal] load build context
+#8 transferring context: 9.80kB 0.0s done
+#8 DONE 0.1s
+
+#9 [builder 4/7] COPY mvnw pom.xml ./
+#9 CACHED
+
+#10 [builder 2/7] WORKDIR /opt/app
+#10 CACHED
+
+#11 [builder 3/7] COPY .mvn/ .mvn
+#11 CACHED
+
+#12 [builder 5/7] RUN ./mvnw -B dependency:go-offline
+#12 CACHED
+
+#13 [builder 6/7] COPY ./src ./src
+#13 DONE 0.1s
+
+#14 [builder 7/7] RUN ./mvnw -B verify
+#14 2.937 [INFO] Scanning for projects...
+#14 3.361 [INFO] 
+#14 3.362 [INFO] --------------------< fr.univ-cotedazur:simpleTCFS >--------------------
+#14 3.362 [INFO] Building simpleTCFS 0.0.1-SNAPSHOT
+#14 3.363 [INFO]   from pom.xml
+#14 3.363 [INFO] --------------------------------[ jar ]---------------------------------
+#14 4.296 [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/glassfish/jaxb/jaxb-runtime/4.0.4/jaxb-runtime-4.0.4.pom
+#14 5.257 [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/glassfish/jaxb/jaxb-runtime/4.0.4/jaxb-runtime-4.0.4.pom (11 kB at 11 kB/s)
+#14 5.280 [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/sun/xml/bind/mvn/jaxb-runtime-parent/4.0.4/jaxb-runtime-parent-4.0.4.pom
+#14 5.469 [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/sun/xml/bind/mvn/jaxb-runtime-parent/4.0.4/jaxb-runtime-parent-4.0.4.pom (1.2 kB at 6.3 kB/s)
+#14 5.474 [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/sun/xml/bind/mvn/jaxb-parent/4.0.4/jaxb-parent-4.0.4.pom
+#14 5.546 [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/sun/xml/bind/mvn/jaxb-parent/4.0.4/jaxb-parent-4.0.4.pom (35 kB at 486 kB/s)
+#14 5.554 [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/sun/xml/bind/jaxb-bom-ext/4.0.4/jaxb-bom-ext-4.0.4.pom
+#14 5.591 [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/sun/xml/bind/jaxb-bom-ext/4.0.4/jaxb-bom-ext-4.0.4.pom (3.5 kB at 94 kB/s)
+#14 5.604 [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/glassfish/jaxb/jaxb-core/4.0.4/jaxb-core-4.0.4.pom
+#14 5.638 [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/glassfish/jaxb/jaxb-core/4.0.4/jaxb-core-4.0.4.pom (3.7 kB at 110 kB/s)
+#14 5.648 [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/glassfish/jaxb/txw2/4.0.4/txw2-4.0.4.pom
+#14 5.680 [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/glassfish/jaxb/txw2/4.0.4/txw2-4.0.4.pom (1.8 kB at 56 kB/s)
+#14 5.686 [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/sun/xml/bind/mvn/jaxb-txw-parent/4.0.4/jaxb-txw-parent-4.0.4.pom
+#14 5.727 [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/sun/xml/bind/mvn/jaxb-txw-parent/4.0.4/jaxb-txw-parent-4.0.4.pom (1.2 kB at 29 kB/s)
+#14 5.736 [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/sun/istack/istack-commons-runtime/4.1.2/istack-commons-runtime-4.1.2.pom
+#14 5.770 [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/sun/istack/istack-commons-runtime/4.1.2/istack-commons-runtime-4.1.2.pom (1.6 kB at 47 kB/s)
+#14 5.775 [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/sun/istack/istack-commons/4.1.2/istack-commons-4.1.2.pom
+#14 5.817 [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/sun/istack/istack-commons/4.1.2/istack-commons-4.1.2.pom (26 kB at 642 kB/s)
+#14 5.860 [INFO] Downloading from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy/1.14.10/byte-buddy-1.14.10.pom
+#14 5.904 [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy/1.14.10/byte-buddy-1.14.10.pom (16 kB at 360 kB/s)
+#14 5.910 [INFO] Downloading from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy-parent/1.14.10/byte-buddy-parent-1.14.10.pom
+#14 5.960 [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy-parent/1.14.10/byte-buddy-parent-1.14.10.pom (62 kB at 1.2 MB/s)
+#14 5.999 [INFO] Downloading from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy-agent/1.14.10/byte-buddy-agent-1.14.10.pom
+#14 6.045 [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy-agent/1.14.10/byte-buddy-agent-1.14.10.pom (10 kB at 232 kB/s)
+#14 6.123 [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/logging/jboss-logging/3.5.3.Final/jboss-logging-3.5.3.Final.pom
+#14 6.158 [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/logging/jboss-logging/3.5.3.Final/jboss-logging-3.5.3.Final.pom (19 kB at 531 kB/s)
+#14 6.164 [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/logging/logging-parent/1.0.1.Final/logging-parent-1.0.1.Final.pom
+#14 6.217 [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/logging/logging-parent/1.0.1.Final/logging-parent-1.0.1.Final.pom (6.0 kB at 112 kB/s)
+#14 6.228 [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/classmate/1.6.0/classmate-1.6.0.pom
+#14 6.265 [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/classmate/1.6.0/classmate-1.6.0.pom (6.6 kB at 179 kB/s)
+#14 6.270 [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/oss-parent/55/oss-parent-55.pom
+#14 6.305 [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/oss-parent/55/oss-parent-55.pom (24 kB at 673 kB/s)
+#14 6.581 [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/springframework/spring-orm/6.1.1/spring-orm-6.1.1.pom
+#14 6.613 [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/springframework/spring-orm/6.1.1/spring-orm-6.1.1.pom (2.6 kB at 79 kB/s)
+#14 6.721 [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/glassfish/jaxb/jaxb-runtime/4.0.4/jaxb-runtime-4.0.4.jar
+#14 7.058 [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/glassfish/jaxb/jaxb-runtime/4.0.4/jaxb-runtime-4.0.4.jar (920 kB at 2.7 MB/s)
+#14 7.061 [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/glassfish/jaxb/jaxb-core/4.0.4/jaxb-core-4.0.4.jar
+#14 7.062 [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/glassfish/jaxb/txw2/4.0.4/txw2-4.0.4.jar
+#14 7.062 [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/sun/istack/istack-commons-runtime/4.1.2/istack-commons-runtime-4.1.2.jar
+#14 7.063 [INFO] Downloading from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy/1.14.10/byte-buddy-1.14.10.jar
+#14 7.063 [INFO] Downloading from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy-agent/1.14.10/byte-buddy-agent-1.14.10.jar
+#14 7.123 [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/glassfish/jaxb/jaxb-core/4.0.4/jaxb-core-4.0.4.jar (139 kB at 2.2 MB/s)
+#14 7.123 [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/logging/jboss-logging/3.5.3.Final/jboss-logging-3.5.3.Final.jar
+#14 7.165 [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/logging/jboss-logging/3.5.3.Final/jboss-logging-3.5.3.Final.jar (59 kB at 586 kB/s)
+#14 7.165 [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/classmate/1.6.0/classmate-1.6.0.jar
+#14 7.263 [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/glassfish/jaxb/txw2/4.0.4/txw2-4.0.4.jar (73 kB at 363 kB/s)
+#14 7.263 [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/springframework/spring-orm/6.1.1/spring-orm-6.1.1.jar
+#14 7.266 [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/classmate/1.6.0/classmate-1.6.0.jar (69 kB at 341 kB/s)
+#14 7.266 [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/springframework/spring-tx/6.1.1/spring-tx-6.1.1.jar
+#14 7.271 [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/sun/istack/istack-commons-runtime/4.1.2/istack-commons-runtime-4.1.2.jar (26 kB at 125 kB/s)
+#14 7.323 [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy-agent/1.14.10/byte-buddy-agent-1.14.10.jar (257 kB at 988 kB/s)
+#14 7.377 [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/springframework/spring-orm/6.1.1/spring-orm-6.1.1.jar (234 kB at 747 kB/s)
+#14 7.417 [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/springframework/spring-tx/6.1.1/spring-tx-6.1.1.jar (284 kB at 808 kB/s)
+#14 8.148 [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy/1.14.10/byte-buddy-1.14.10.jar (4.2 MB at 3.9 MB/s)
+#14 8.182 [INFO] 
+#14 8.182 [INFO] --- resources:3.3.1:resources (default-resources) @ simpleTCFS ---
+#14 8.373 [INFO] Copying 1 resource from src/main/resources to target/classes
+#14 8.400 [INFO] Copying 2 resources from src/main/resources to target/classes
+#14 8.403 [INFO] 
+#14 8.403 [INFO] --- compiler:3.11.0:compile (default-compile) @ simpleTCFS ---
+#14 8.613 [INFO] Changes detected - recompiling the module! :source
+#14 8.623 [INFO] Compiling 57 source files with javac [debug release 17] to target/classes
+#14 11.34 [INFO] 
+#14 11.34 [INFO] --- resources:3.3.1:testResources (default-testResources) @ simpleTCFS ---
+#14 11.35 [INFO] Copying 6 resources from src/test/resources to target/test-classes
+#14 11.35 [INFO] 
+#14 11.35 [INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ simpleTCFS ---
+#14 11.36 [INFO] Changes detected - recompiling the module! :dependency
+#14 11.36 [INFO] Compiling 17 source files with javac [debug release 17] to target/test-classes
+#14 12.37 [INFO] /opt/app/src/test/java/fr/univcotedazur/simpletcfs/cucumber/ordering/OrderingCookies.java: /opt/app/src/test/java/fr/univcotedazur/simpletcfs/cucumber/ordering/OrderingCookies.java uses or overrides a deprecated API.
+#14 12.37 [INFO] /opt/app/src/test/java/fr/univcotedazur/simpletcfs/cucumber/ordering/OrderingCookies.java: Recompile with -Xlint:deprecation for details.
+#14 12.37 [INFO] 
+#14 12.37 [INFO] --- surefire:3.1.2:test (default-test) @ simpleTCFS ---
+#14 12.67 [INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+#14 12.69 [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit-platform/3.1.2/surefire-junit-platform-3.1.2.pom
+#14 12.73 [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit-platform/3.1.2/surefire-junit-platform-3.1.2.pom (4.7 kB at 120 kB/s)
+#14 12.74 [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/3.1.2/surefire-providers-3.1.2.pom
+#14 12.90 [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/3.1.2/surefire-providers-3.1.2.pom (2.6 kB at 16 kB/s)
+#14 12.92 [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-java5/3.1.2/common-java5-3.1.2.pom
+#14 12.96 [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-java5/3.1.2/common-java5-3.1.2.pom (2.8 kB at 70 kB/s)
+#14 12.97 [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/1.9.2/junit-platform-launcher-1.9.2.pom
+#14 13.01 [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/1.9.2/junit-platform-launcher-1.9.2.pom (3.0 kB at 74 kB/s)
+#14 13.01 [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/1.9.2/junit-platform-engine-1.9.2.pom
+#14 13.07 [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/1.9.2/junit-platform-engine-1.9.2.pom (3.2 kB at 52 kB/s)
+#14 13.08 [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.pom
+#14 13.15 [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.pom (1.7 kB at 23 kB/s)
+#14 13.16 [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/1.9.2/junit-platform-commons-1.9.2.pom
+#14 13.32 [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/1.9.2/junit-platform-commons-1.9.2.pom (2.8 kB at 17 kB/s)
+#14 13.33 [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit-platform/3.1.2/surefire-junit-platform-3.1.2.jar
+#14 13.39 [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit-platform/3.1.2/surefire-junit-platform-3.1.2.jar (27 kB at 468 kB/s)
+#14 13.39 [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-java5/3.1.2/common-java5-3.1.2.jar
+#14 13.39 [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/1.9.2/junit-platform-engine-1.9.2.jar
+#14 13.40 [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/1.9.2/junit-platform-launcher-1.9.2.jar
+#14 13.40 [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar
+#14 13.40 [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/1.9.2/junit-platform-commons-1.9.2.jar
+#14 13.52 [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar (7.7 kB at 61 kB/s)
+#14 13.52 [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-java5/3.1.2/common-java5-3.1.2.jar (18 kB at 128 kB/s)
+#14 13.56 [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/1.9.2/junit-platform-commons-1.9.2.jar (103 kB at 610 kB/s)
+#14 13.63 [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/1.9.2/junit-platform-engine-1.9.2.jar (189 kB at 776 kB/s)
+#14 13.65 [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/1.9.2/junit-platform-launcher-1.9.2.jar (169 kB at 634 kB/s)
+#14 13.70 [INFO] 
+#14 13.70 [INFO] -------------------------------------------------------
+#14 13.70 [INFO]  T E S T S
+#14 13.70 [INFO] -------------------------------------------------------
+#14 15.27 [INFO] Running fr.univcotedazur.simpletcfs.components.CatalogTest
+#14 16.86 2024-03-06T10:23:41.473Z  INFO 69 --- [           main] f.u.simpletcfs.components.CatalogTest    : Starting CatalogTest using Java 17.0.10 with PID 69 (started by root in /opt/app)
+#14 16.86 2024-03-06T10:23:41.480Z  INFO 69 --- [           main] f.u.simpletcfs.components.CatalogTest    : No active profile set, falling back to 1 default profile: "default"
+#14 20.27 2024-03-06T10:23:44.891Z  INFO 69 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+#14 20.57 2024-03-06T10:23:45.267Z  INFO 69 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:db user=SA
+#14 20.57 2024-03-06T10:23:45.271Z  INFO 69 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+#14 20.67 2024-03-06T10:23:45.365Z  INFO 69 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+#14 20.77 2024-03-06T10:23:45.463Z  INFO 69 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
+#14 20.87 2024-03-06T10:23:45.532Z  INFO 69 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+#14 21.37 2024-03-06T10:23:45.999Z  WARN 69 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+#14 23.28 2024-03-06T10:23:47.925Z  INFO 69 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+#14 23.28 Hibernate: 
+#14 23.28     drop table if exists activity cascade 
+#14 23.28 Hibernate: 
+#14 23.28     drop table if exists booking cascade 
+#14 23.28 Hibernate: 
+#14 23.28     drop table if exists customer cascade 
+#14 23.28 Hibernate: 
+#14 23.28     drop table if exists customer_cart cascade 
+#14 23.28 Hibernate: 
+#14 23.28     drop table if exists order_items cascade 
+#14 23.28 Hibernate: 
+#14 23.28     drop table if exists orders cascade 
+#14 23.28 Hibernate: 
+#14 23.28     drop sequence if exists activity_seq
+#14 23.28 Hibernate: 
+#14 23.28     drop sequence if exists booking_seq
+#14 23.28 Hibernate: 
+#14 23.28     drop sequence if exists customer_seq
+#14 23.28 Hibernate: 
+#14 23.28     drop sequence if exists orders_seq
+#14 23.28 Hibernate: 
+#14 23.28     create sequence activity_seq start with 1 increment by 50
+#14 23.28 Hibernate: 
+#14 23.28     create sequence booking_seq start with 1 increment by 50
+#14 23.28 Hibernate: 
+#14 23.28     create sequence customer_seq start with 1 increment by 50
+#14 23.28 Hibernate: 
+#14 23.28     create sequence orders_seq start with 1 increment by 50
+#14 23.28 Hibernate: 
+#14 23.28     create table activity (
+#14 23.28         nb_places integer not null,
+#14 23.28         prix float(24) not null,
+#14 23.28         id bigint not null,
+#14 23.28         nom_activite varchar(255),
+#14 23.28         primary key (id)
+#14 23.28     )
+#14 23.38 Hibernate: 
+#14 23.38     create table booking (
+#14 23.38         date_reservation date,
+#14 23.38         activity_id bigint,
+#14 23.38         customer_id bigint,
+#14 23.38         id bigint not null,
+#14 23.38         payment_receipt_id bigint,
+#14 23.38         primary key (id)
+#14 23.38     )
+#14 23.38 Hibernate: 
+#14 23.38     create table customer (
+#14 23.38         pointfidele integer not null,
+#14 23.38         id bigint not null,
+#14 23.38         credit_card varchar(255),
+#14 23.38         name varchar(255) unique,
+#14 23.38         primary key (id)
+#14 23.38     )
+#14 23.38 Hibernate: 
+#14 23.38     create table customer_cart (
+#14 23.38         quantity integer not null,
+#14 23.38         customer_id bigint not null,
+#14 23.38         cookie varchar(255) check (cookie in ('CHOCOLALALA','DARK_TEMPTATION','SOO_CHOCOLATE'))
+#14 23.38     )
+#14 23.38 Hibernate: 
+#14 23.38     create table order_items (
+#14 23.38         quantity integer not null,
+#14 23.38         order_id bigint not null,
+#14 23.38         cookie varchar(255) check (cookie in ('CHOCOLALALA','DARK_TEMPTATION','SOO_CHOCOLATE'))
+#14 23.38     )
+#14 23.38 Hibernate: 
+#14 23.38     create table orders (
+#14 23.38         price float(53) not null,
+#14 23.38         customer_id bigint,
+#14 23.38         id bigint not null,
+#14 23.38         pay_receipt_id varchar(255),
+#14 23.38         status varchar(255) check (status in ('CANCELLED','IN_PROGRESS','FINISHED')),
+#14 23.38         primary key (id)
+#14 23.38     )
+#14 23.38 Hibernate: 
+#14 23.38     alter table if exists booking 
+#14 23.38        add constraint FKn3p0dqhv1p3hl1gv6a2ltvsbu 
+#14 23.38        foreign key (activity_id) 
+#14 23.38        references activity
+#14 23.38 Hibernate: 
+#14 23.38     alter table if exists booking 
+#14 23.38        add constraint FKlnnelfsha11xmo2ndjq66fvro 
+#14 23.38        foreign key (customer_id) 
+#14 23.38        references customer
+#14 23.38 Hibernate: 
+#14 23.38     alter table if exists customer_cart 
+#14 23.38        add constraint FKeaqo5asykq66fm0cfdrhoiyv7 
+#14 23.38        foreign key (customer_id) 
+#14 23.38        references customer
+#14 23.38 Hibernate: 
+#14 23.38     alter table if exists order_items 
+#14 23.38        add constraint FKbioxgbv59vetrxe0ejfubep1w 
+#14 23.38        foreign key (order_id) 
+#14 23.38        references orders
+#14 23.38 Hibernate: 
+#14 23.38     alter table if exists orders 
+#14 23.38        add constraint FK624gtjin3po807j3vix093tlf 
+#14 23.38        foreign key (customer_id) 
+#14 23.38        references customer
+#14 30.00 2024-03-06T10:23:54.619Z  INFO 69 --- [           main] f.u.simpletcfs.components.CatalogTest    : Started CatalogTest in 13.595 seconds (process running for 16.063)
+#14 30.43 OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+#14 30.90 [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 15.58 s -- in fr.univcotedazur.simpletcfs.components.CatalogTest
+#14 30.90 [INFO] Running fr.univcotedazur.simpletcfs.components.ActivityTest
+#14 31.00 2024-03-06T10:23:55.648Z  INFO 69 --- [           main] f.u.simpletcfs.components.ActivityTest   : Starting ActivityTest using Java 17.0.10 with PID 69 (started by root in /opt/app)
+#14 31.00 2024-03-06T10:23:55.650Z  INFO 69 --- [           main] f.u.simpletcfs.components.ActivityTest   : No active profile set, falling back to 1 default profile: "default"
+#14 32.00 2024-03-06T10:23:56.710Z  INFO 69 --- [           main] f.u.simpletcfs.components.ActivityTest   : Started ActivityTest in 1.107 seconds (process running for 18.154)
+#14 32.41 [fr.univcotedazur.simpletcfs.entities.Activity@b0e7bde]
+#14 32.48 [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.609 s -- in fr.univcotedazur.simpletcfs.components.ActivityTest
+#14 32.48 [INFO] Running fr.univcotedazur.simpletcfs.components.BookingTest
+#14 32.69 [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.200 s -- in fr.univcotedazur.simpletcfs.components.BookingTest
+#14 32.69 [INFO] Running fr.univcotedazur.simpletcfs.components.CustomerRegistryTest
+#14 33.02 Hibernate: 
+#14 33.02     select
+#14 33.02         c1_0.id,
+#14 33.02         c1_0.credit_card,
+#14 33.02         c1_0.name,
+#14 33.02         c1_0.pointfidele 
+#14 33.02     from
+#14 33.02         customer c1_0 
+#14 33.02     where
+#14 33.02         c1_0.name=?
+#14 33.02 Hibernate: 
+#14 33.02     select
+#14 33.02         next value for customer_seq
+#14 33.21 Hibernate: 
+#14 33.21     insert 
+#14 33.21     into
+#14 33.21         customer
+#14 33.21         (credit_card, name, pointfidele, id) 
+#14 33.21     values
+#14 33.21         (?, ?, ?, ?)
+#14 33.21 Hibernate: 
+#14 33.21     select
+#14 33.21         c1_0.id,
+#14 33.21         c1_0.credit_card,
+#14 33.21         c1_0.name,
+#14 33.21         c1_0.pointfidele 
+#14 33.21     from
+#14 33.21         customer c1_0 
+#14 33.21     where
+#14 33.21         c1_0.name=?
+#14 33.26 Hibernate: 
+#14 33.26     select
+#14 33.26         c1_0.id,
+#14 33.26         c1_0.credit_card,
+#14 33.26         c1_0.name,
+#14 33.26         c1_0.pointfidele 
+#14 33.26     from
+#14 33.26         customer c1_0 
+#14 33.26     where
+#14 33.26         c1_0.name=?
+#14 33.26 Hibernate: 
+#14 33.26     select
+#14 33.26         next value for customer_seq
+#14 33.26 Hibernate: 
+#14 33.26     insert 
+#14 33.26     into
+#14 33.26         customer
+#14 33.26         (credit_card, name, pointfidele, id) 
+#14 33.26     values
+#14 33.26         (?, ?, ?, ?)
+#14 33.26 Hibernate: 
+#14 33.26     select
+#14 33.26         c1_0.id,
+#14 33.26         c1_0.credit_card,
+#14 33.26         c1_0.name,
+#14 33.26         c1_0.pointfidele 
+#14 33.26     from
+#14 33.26         customer c1_0 
+#14 33.26     where
+#14 33.26         c1_0.name=?
+#14 33.28 Hibernate: 
+#14 33.28     select
+#14 33.28         c1_0.id,
+#14 33.28         c1_0.credit_card,
+#14 33.28         c1_0.name,
+#14 33.28         c1_0.pointfidele 
+#14 33.28     from
+#14 33.28         customer c1_0 
+#14 33.28     where
+#14 33.28         c1_0.name=?
+#14 33.30 [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.606 s -- in fr.univcotedazur.simpletcfs.components.CustomerRegistryTest
+#14 33.30 [INFO] Running fr.univcotedazur.simpletcfs.components.KitchenTest
+#14 33.33 Hibernate: 
+#14 33.33     select
+#14 33.33         c1_0.id,
+#14 33.33         c1_0.credit_card,
+#14 33.33         c1_0.name,
+#14 33.33         c1_0.pointfidele 
+#14 33.33     from
+#14 33.33         customer c1_0 
+#14 33.33     where
+#14 33.33         c1_0.name=?
+#14 33.33 Hibernate: 
+#14 33.33     select
+#14 33.33         next value for orders_seq
+#14 33.34 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.040 s -- in fr.univcotedazur.simpletcfs.components.KitchenTest
+#14 33.34 [INFO] Running fr.univcotedazur.simpletcfs.components.CartHandlerTest
+#14 33.42 Hibernate: 
+#14 33.42     select
+#14 33.42         c1_0.id,
+#14 33.42         c1_0.credit_card,
+#14 33.42         c1_0.name,
+#14 33.42         c1_0.pointfidele 
+#14 33.42     from
+#14 33.42         customer c1_0 
+#14 33.42     where
+#14 33.42         c1_0.name=?
+#14 33.42 Hibernate: 
+#14 33.42     insert 
+#14 33.42     into
+#14 33.42         customer
+#14 33.42         (credit_card, name, pointfidele, id) 
+#14 33.42     values
+#14 33.42         (?, ?, ?, ?)
+#14 33.42 Hibernate: 
+#14 33.42     select
+#14 33.42         c1_0.id,
+#14 33.42         c2_0.customer_id,
+#14 33.42         c2_0.cookie,
+#14 33.42         c2_0.quantity,
+#14 33.42         c1_0.credit_card,
+#14 33.42         c1_0.name,
+#14 33.42         c1_0.pointfidele 
+#14 33.42     from
+#14 33.42         customer c1_0 
+#14 33.42     left join
+#14 33.42         customer_cart c2_0 
+#14 33.42             on c1_0.id=c2_0.customer_id 
+#14 33.42     where
+#14 33.42         c1_0.id=?
+#14 33.42 2024-03-06T10:23:58.108Z  INFO 69 --- [           main] f.u.simpletcfs.components.CartHandler    : TCFS:Cart-Component: Updating cart of John with 2xCHOCOLALALA
+#14 33.42 Hibernate: 
+#14 33.42     insert 
+#14 33.42     into
+#14 33.42         customer_cart
+#14 33.42         (customer_id, cookie, quantity) 
+#14 33.42     values
+#14 33.42         (?, ?, ?)
+#14 33.52 Hibernate: 
+#14 33.52     select
+#14 33.52         c1_0.id,
+#14 33.52         c2_0.customer_id,
+#14 33.52         c2_0.cookie,
+#14 33.52         c2_0.quantity,
+#14 33.52         c1_0.credit_card,
+#14 33.52         c1_0.name,
+#14 33.52         c1_0.pointfidele 
+#14 33.52     from
+#14 33.52         customer c1_0 
+#14 33.52     left join
+#14 33.52         customer_cart c2_0 
+#14 33.52             on c1_0.id=c2_0.customer_id 
+#14 33.52     where
+#14 33.52         c1_0.id=?
+#14 33.52 2024-03-06T10:23:58.133Z  INFO 69 --- [           main] f.u.simpletcfs.components.CartHandler    : TCFS:Cart-Component: Updating cart of John with 3xDARK_TEMPTATION
+#14 33.52 Hibernate: 
+#14 33.52     insert 
+#14 33.52     into
+#14 33.52         customer_cart
+#14 33.52         (customer_id, cookie, quantity) 
+#14 33.52     values
+#14 33.52         (?, ?, ?)
+#14 33.52 Hibernate: 
+#14 33.52     select
+#14 33.52         c1_0.id,
+#14 33.52         c2_0.customer_id,
+#14 33.52         c2_0.cookie,
+#14 33.52         c2_0.quantity,
+#14 33.52         c1_0.credit_card,
+#14 33.52         c1_0.name,
+#14 33.52         c1_0.pointfidele 
+#14 33.52     from
+#14 33.52         customer c1_0 
+#14 33.52     left join
+#14 33.52         customer_cart c2_0 
+#14 33.52             on c1_0.id=c2_0.customer_id 
+#14 33.52     where
+#14 33.52         c1_0.id=?
+#14 33.52 Hibernate: 
+#14 33.52     select
+#14 33.52         c1_0.id,
+#14 33.52         c1_0.credit_card,
+#14 33.52         c1_0.name,
+#14 33.52         c1_0.pointfidele 
+#14 33.52     from
+#14 33.52         customer c1_0 
+#14 33.52     where
+#14 33.52         c1_0.name=?
+#14 33.52 Hibernate: 
+#14 33.52     select
+#14 33.52         c1_0.customer_id,
+#14 33.52         c1_0.cookie,
+#14 33.52         c1_0.quantity 
+#14 33.52     from
+#14 33.52         customer_cart c1_0 
+#14 33.52     where
+#14 33.52         c1_0.customer_id=?
+#14 33.52 Hibernate: 
+#14 33.52     select
+#14 33.52         c1_0.id,
+#14 33.52         c2_0.customer_id,
+#14 33.52         c2_0.cookie,
+#14 33.52         c2_0.quantity,
+#14 33.52         c1_0.credit_card,
+#14 33.52         c1_0.name,
+#14 33.52         c1_0.pointfidele 
+#14 33.52     from
+#14 33.52         customer c1_0 
+#14 33.52     left join
+#14 33.52         customer_cart c2_0 
+#14 33.52             on c1_0.id=c2_0.customer_id 
+#14 33.52     where
+#14 33.52         c1_0.id=?
+#14 33.56 Hibernate: 
+#14 33.56     select
+#14 33.56         b1_0.customer_id,
+#14 33.56         b1_0.id,
+#14 33.56         a1_0.id,
+#14 33.56         a1_0.prix,
+#14 33.56         a1_0.nb_places,
+#14 33.56         a1_0.nom_activite,
+#14 33.56         b1_0.date_reservation,
+#14 33.56         b1_0.payment_receipt_id 
+#14 33.56     from
+#14 33.56         booking b1_0 
+#14 33.56     left join
+#14 33.56         activity a1_0 
+#14 33.56             on a1_0.id=b1_0.activity_id 
+#14 33.56     where
+#14 33.56         b1_0.customer_id=?
+#14 33.56 Hibernate: 
+#14 33.56     select
+#14 33.56         o1_0.customer_id,
+#14 33.56         o1_0.id,
+#14 33.56         o1_0.pay_receipt_id,
+#14 33.56         o1_0.price,
+#14 33.56         o1_0.status 
+#14 33.56     from
+#14 33.56         orders o1_0 
+#14 33.56     where
+#14 33.56         o1_0.customer_id=?
+#14 33.56 Hibernate: 
+#14 33.56     delete 
+#14 33.56     from
+#14 33.56         customer_cart 
+#14 33.56     where
+#14 33.56         customer_id=?
+#14 33.56 Hibernate: 
+#14 33.56     delete 
+#14 33.56     from
+#14 33.56         customer 
+#14 33.56     where
+#14 33.56         id=?
+#14 33.62 Hibernate: 
+#14 33.62     select
+#14 33.62         c1_0.id,
+#14 33.62         c1_0.credit_card,
+#14 33.62         c1_0.name,
+#14 33.62         c1_0.pointfidele 
+#14 33.62     from
+#14 33.62         customer c1_0 
+#14 33.62     where
+#14 33.62         c1_0.name=?
+#14 33.62 Hibernate: 
+#14 33.62     insert 
+#14 33.62     into
+#14 33.62         customer
+#14 33.62         (credit_card, name, pointfidele, id) 
+#14 33.62     values
+#14 33.62         (?, ?, ?, ?)
+#14 33.62 Hibernate: 
+#14 33.62     select
+#14 33.62         c1_0.id,
+#14 33.62         c2_0.customer_id,
+#14 33.62         c2_0.cookie,
+#14 33.62         c2_0.quantity,
+#14 33.62         c1_0.credit_card,
+#14 33.62         c1_0.name,
+#14 33.62         c1_0.pointfidele 
+#14 33.62     from
+#14 33.62         customer c1_0 
+#14 33.62     left join
+#14 33.62         customer_cart c2_0 
+#14 33.62             on c1_0.id=c2_0.customer_id 
+#14 33.62     where
+#14 33.62         c1_0.id=?
+#14 33.62 2024-03-06T10:23:58.291Z  INFO 69 --- [           main] f.u.simpletcfs.components.CartHandler    : TCFS:Cart-Component: Updating cart of John with 2xCHOCOLALALA
+#14 33.62 Hibernate: 
+#14 33.62     insert 
+#14 33.62     into
+#14 33.62         customer_cart
+#14 33.62         (customer_id, cookie, quantity) 
+#14 33.62     values
+#14 33.62         (?, ?, ?)
+#14 33.62 Hibernate: 
+#14 33.62     select
+#14 33.62         c1_0.id,
+#14 33.62         c2_0.customer_id,
+#14 33.62         c2_0.cookie,
+#14 33.62         c2_0.quantity,
+#14 33.62         c1_0.credit_card,
+#14 33.62         c1_0.name,
+#14 33.62         c1_0.pointfidele 
+#14 33.62     from
+#14 33.62         customer c1_0 
+#14 33.62     left join
+#14 33.62         customer_cart c2_0 
+#14 33.62             on c1_0.id=c2_0.customer_id 
+#14 33.62     where
+#14 33.62         c1_0.id=?
+#14 33.62 2024-03-06T10:23:58.299Z  INFO 69 --- [           main] f.u.simpletcfs.components.CartHandler    : TCFS:Cart-Component: Updating cart of John with 3xDARK_TEMPTATION
+#14 33.62 Hibernate: 
+#14 33.62     insert 
+#14 33.62     into
+#14 33.62         customer_cart
+#14 33.62         (customer_id, cookie, quantity) 
+#14 33.62     values
+#14 33.62         (?, ?, ?)
+#14 33.62 Hibernate: 
+#14 33.62     select
+#14 33.62         c1_0.id,
+#14 33.62         c2_0.customer_id,
+#14 33.62         c2_0.cookie,
+#14 33.62         c2_0.quantity,
+#14 33.62         c1_0.credit_card,
+#14 33.62         c1_0.name,
+#14 33.62         c1_0.pointfidele 
+#14 33.62     from
+#14 33.62         customer c1_0 
+#14 33.62     left join
+#14 33.62         customer_cart c2_0 
+#14 33.62             on c1_0.id=c2_0.customer_id 
+#14 33.62     where
+#14 33.62         c1_0.id=?
+#14 33.62 2024-03-06T10:23:58.308Z  INFO 69 --- [           main] f.u.simpletcfs.components.CartHandler    : TCFS:Cart-Component: Updating cart of John with -3xCHOCOLALALA
+#14 33.62 Hibernate: 
+#14 33.62     select
+#14 33.62         c1_0.id,
+#14 33.62         c2_0.customer_id,
+#14 33.62         c2_0.cookie,
+#14 33.62         c2_0.quantity,
+#14 33.62         c1_0.credit_card,
+#14 33.62         c1_0.name,
+#14 33.62         c1_0.pointfidele 
+#14 33.62     from
+#14 33.62         customer c1_0 
+#14 33.62     left join
+#14 33.62         customer_cart c2_0 
+#14 33.62             on c1_0.id=c2_0.customer_id 
+#14 33.62     where
+#14 33.62         c1_0.id=?
+#14 33.62 Hibernate: 
+#14 33.62     select
+#14 33.62         c1_0.id,
+#14 33.62         c1_0.credit_card,
+#14 33.62         c1_0.name,
+#14 33.62         c1_0.pointfidele 
+#14 33.62     from
+#14 33.62         customer c1_0 
+#14 33.62     where
+#14 33.62         c1_0.name=?
+#14 33.62 Hibernate: 
+#14 33.62     select
+#14 33.62         c1_0.customer_id,
+#14 33.62         c1_0.cookie,
+#14 33.62         c1_0.quantity 
+#14 33.62     from
+#14 33.62         customer_cart c1_0 
+#14 33.62     where
+#14 33.62         c1_0.customer_id=?
+#14 33.62 Hibernate: 
+#14 33.62     select
+#14 33.62         c1_0.id,
+#14 33.62         c2_0.customer_id,
+#14 33.62         c2_0.cookie,
+#14 33.62         c2_0.quantity,
+#14 33.62         c1_0.credit_card,
+#14 33.62         c1_0.name,
+#14 33.62         c1_0.pointfidele 
+#14 33.62     from
+#14 33.62         customer c1_0 
+#14 33.62     left join
+#14 33.62         customer_cart c2_0 
+#14 33.62             on c1_0.id=c2_0.customer_id 
+#14 33.62     where
+#14 33.62         c1_0.id=?
+#14 33.62 Hibernate: 
+#14 33.62     select
+#14 33.62         b1_0.customer_id,
+#14 33.62         b1_0.id,
+#14 33.62         a1_0.id,
+#14 33.62         a1_0.prix,
+#14 33.62         a1_0.nb_places,
+#14 33.62         a1_0.nom_activite,
+#14 33.62         b1_0.date_reservation,
+#14 33.62         b1_0.payment_receipt_id 
+#14 33.62     from
+#14 33.62         booking b1_0 
+#14 33.62     left join
+#14 33.62         activity a1_0 
+#14 33.62             on a1_0.id=b1_0.activity_id 
+#14 33.62     where
+#14 33.62         b1_0.customer_id=?
+#14 33.63 Hibernate: 
+#14 33.63     select
+#14 33.63         o1_0.customer_id,
+#14 33.63         o1_0.id,
+#14 33.63         o1_0.pay_receipt_id,
+#14 33.63         o1_0.price,
+#14 33.63         o1_0.status 
+#14 33.63     from
+#14 33.63         orders o1_0 
+#14 33.63     where
+#14 33.63         o1_0.customer_id=?
+#14 33.63 Hibernate: 
+#14 33.63     delete 
+#14 33.63     from
+#14 33.63         customer_cart 
+#14 33.63     where
+#14 33.63         customer_id=?
+#14 33.63 Hibernate: 
+#14 33.63     delete 
+#14 33.63     from
+#14 33.63         customer 
+#14 33.63     where
+#14 33.63         id=?
+#14 33.69 Hibernate: 
+#14 33.69     select
+#14 33.69         c1_0.id,
+#14 33.69         c1_0.credit_card,
+#14 33.69         c1_0.name,
+#14 33.69         c1_0.pointfidele 
+#14 33.69     from
+#14 33.69         customer c1_0 
+#14 33.69     where
+#14 33.69         c1_0.name=?
+#14 33.69 Hibernate: 
+#14 33.69     insert 
+#14 33.69     into
+#14 33.69         customer
+#14 33.69         (credit_card, name, pointfidele, id) 
+#14 33.69     values
+#14 33.69         (?, ?, ?, ?)
+#14 33.69 Hibernate: 
+#14 33.69     select
+#14 33.69         c1_0.id,
+#14 33.69         c2_0.customer_id,
+#14 33.69         c2_0.cookie,
+#14 33.69         c2_0.quantity,
+#14 33.69         c1_0.credit_card,
+#14 33.69         c1_0.name,
+#14 33.69         c1_0.pointfidele 
+#14 33.69     from
+#14 33.69         customer c1_0 
+#14 33.69     left join
+#14 33.69         customer_cart c2_0 
+#14 33.69             on c1_0.id=c2_0.customer_id 
+#14 33.69     where
+#14 33.69         c1_0.id=?
+#14 33.69 2024-03-06T10:23:58.354Z  INFO 69 --- [           main] f.u.simpletcfs.components.CartHandler    : TCFS:Cart-Component: Updating cart of John with 2xCHOCOLALALA
+#14 33.69 Hibernate: 
+#14 33.69     insert 
+#14 33.69     into
+#14 33.69         customer_cart
+#14 33.69         (customer_id, cookie, quantity) 
+#14 33.69     values
+#14 33.69         (?, ?, ?)
+#14 33.69 Hibernate: 
+#14 33.69     select
+#14 33.69         c1_0.id,
+#14 33.69         c2_0.customer_id,
+#14 33.69         c2_0.cookie,
+#14 33.69         c2_0.quantity,
+#14 33.69         c1_0.credit_card,
+#14 33.69         c1_0.name,
+#14 33.69         c1_0.pointfidele 
+#14 33.69     from
+#14 33.69         customer c1_0 
+#14 33.69     left join
+#14 33.69         customer_cart c2_0 
+#14 33.69             on c1_0.id=c2_0.customer_id 
+#14 33.69     where
+#14 33.69         c1_0.id=?
+#14 33.69 2024-03-06T10:23:58.359Z  INFO 69 --- [           main] f.u.simpletcfs.components.CartHandler    : TCFS:Cart-Component: Updating cart of John with 3xDARK_TEMPTATION
+#14 33.70 Hibernate: 
+#14 33.70     insert 
+#14 33.70     into
+#14 33.70         customer_cart
+#14 33.70         (customer_id, cookie, quantity) 
+#14 33.70     values
+#14 33.70         (?, ?, ?)
+#14 33.70 Hibernate: 
+#14 33.70     select
+#14 33.70         c1_0.id,
+#14 33.70         c2_0.customer_id,
+#14 33.70         c2_0.cookie,
+#14 33.70         c2_0.quantity,
+#14 33.70         c1_0.credit_card,
+#14 33.70         c1_0.name,
+#14 33.70         c1_0.pointfidele 
+#14 33.70     from
+#14 33.70         customer c1_0 
+#14 33.70     left join
+#14 33.70         customer_cart c2_0 
+#14 33.70             on c1_0.id=c2_0.customer_id 
+#14 33.70     where
+#14 33.70         c1_0.id=?
+#14 33.70 2024-03-06T10:23:58.365Z  INFO 69 --- [           main] f.u.simpletcfs.components.CartHandler    : TCFS:Cart-Component: Updating cart of John with 3xCHOCOLALALA
+#14 33.70 Hibernate: 
+#14 33.70     delete 
+#14 33.70     from
+#14 33.70         customer_cart 
+#14 33.70     where
+#14 33.70         customer_id=? 
+#14 33.70         and quantity=?
+#14 33.70 Hibernate: 
+#14 33.70     insert 
+#14 33.70     into
+#14 33.70         customer_cart
+#14 33.70         (customer_id, cookie, quantity) 
+#14 33.70     values
+#14 33.70         (?, ?, ?)
+#14 33.70 Hibernate: 
+#14 33.70     select
+#14 33.70         c1_0.id,
+#14 33.70         c2_0.customer_id,
+#14 33.70         c2_0.cookie,
+#14 33.70         c2_0.quantity,
+#14 33.70         c1_0.credit_card,
+#14 33.70         c1_0.name,
+#14 33.70         c1_0.pointfidele 
+#14 33.70     from
+#14 33.70         customer c1_0 
+#14 33.70     left join
+#14 33.70         customer_cart c2_0 
+#14 33.70             on c1_0.id=c2_0.customer_id 
+#14 33.70     where
+#14 33.70         c1_0.id=?
+#14 33.70 Hibernate: 
+#14 33.70     select
+#14 33.70         c1_0.id,
+#14 33.70         c1_0.credit_card,
+#14 33.70         c1_0.name,
+#14 33.70         c1_0.pointfidele 
+#14 33.70     from
+#14 33.70         customer c1_0 
+#14 33.70     where
+#14 33.70         c1_0.name=?
+#14 33.70 Hibernate: 
+#14 33.70     select
+#14 33.70         c1_0.customer_id,
+#14 33.70         c1_0.cookie,
+#14 33.70         c1_0.quantity 
+#14 33.70     from
+#14 33.70         customer_cart c1_0 
+#14 33.70     where
+#14 33.70         c1_0.customer_id=?
+#14 33.70 Hibernate: 
+#14 33.70     select
+#14 33.70         c1_0.id,
+#14 33.70         c2_0.customer_id,
+#14 33.70         c2_0.cookie,
+#14 33.70         c2_0.quantity,
+#14 33.70         c1_0.credit_card,
+#14 33.70         c1_0.name,
+#14 33.70         c1_0.pointfidele 
+#14 33.70     from
+#14 33.70         customer c1_0 
+#14 33.70     left join
+#14 33.70         customer_cart c2_0 
+#14 33.70             on c1_0.id=c2_0.customer_id 
+#14 33.70     where
+#14 33.70         c1_0.id=?
+#14 33.70 Hibernate: 
+#14 33.70     select
+#14 33.70         b1_0.customer_id,
+#14 33.70         b1_0.id,
+#14 33.70         a1_0.id,
+#14 33.70         a1_0.prix,
+#14 33.70         a1_0.nb_places,
+#14 33.70         a1_0.nom_activite,
+#14 33.70         b1_0.date_reservation,
+#14 33.70         b1_0.payment_receipt_id 
+#14 33.70     from
+#14 33.70         booking b1_0 
+#14 33.70     left join
+#14 33.70         activity a1_0 
+#14 33.70             on a1_0.id=b1_0.activity_id 
+#14 33.70     where
+#14 33.70         b1_0.customer_id=?
+#14 33.70 Hibernate: 
+#14 33.70     select
+#14 33.70         o1_0.customer_id,
+#14 33.70         o1_0.id,
+#14 33.70         o1_0.pay_receipt_id,
+#14 33.70         o1_0.price,
+#14 33.70         o1_0.status 
+#14 33.70     from
+#14 33.70         orders o1_0 
+#14 33.70     where
+#14 33.70         o1_0.customer_id=?
+#14 33.70 Hibernate: 
+#14 33.70     delete 
+#14 33.70     from
+#14 33.70         customer_cart 
+#14 33.70     where
+#14 33.70         customer_id=?
+#14 33.70 Hibernate: 
+#14 33.70     delete 
+#14 33.70     from
+#14 33.70         customer 
+#14 33.70     where
+#14 33.70         id=?
+#14 33.72 Hibernate: 
+#14 33.72     select
+#14 33.72         c1_0.id,
+#14 33.72         c1_0.credit_card,
+#14 33.72         c1_0.name,
+#14 33.72         c1_0.pointfidele 
+#14 33.72     from
+#14 33.72         customer c1_0 
+#14 33.72     where
+#14 33.72         c1_0.name=?
+#14 33.72 Hibernate: 
+#14 33.72     insert 
+#14 33.72     into
+#14 33.72         customer
+#14 33.72         (credit_card, name, pointfidele, id) 
+#14 33.72     values
+#14 33.72         (?, ?, ?, ?)
+#14 33.72 Hibernate: 
+#14 33.72     select
+#14 33.72         c1_0.id,
+#14 33.72         c2_0.customer_id,
+#14 33.72         c2_0.cookie,
+#14 33.72         c2_0.quantity,
+#14 33.72         c1_0.credit_card,
+#14 33.72         c1_0.name,
+#14 33.72         c1_0.pointfidele 
+#14 33.72     from
+#14 33.72         customer c1_0 
+#14 33.72     left join
+#14 33.72         customer_cart c2_0 
+#14 33.72             on c1_0.id=c2_0.customer_id 
+#14 33.72     where
+#14 33.72         c1_0.id=?
+#14 33.72 2024-03-06T10:23:58.422Z  INFO 69 --- [           main] f.u.simpletcfs.components.CartHandler    : TCFS:Cart-Component: Updating cart of John with 2xCHOCOLALALA
+#14 33.72 Hibernate: 
+#14 33.72     insert 
+#14 33.72     into
+#14 33.72         customer_cart
+#14 33.72         (customer_id, cookie, quantity) 
+#14 33.72     values
+#14 33.72         (?, ?, ?)
+#14 33.77 Hibernate: 
+#14 33.77     select
+#14 33.77         c1_0.id,
+#14 33.77         c2_0.customer_id,
+#14 33.77         c2_0.cookie,
+#14 33.77         c2_0.quantity,
+#14 33.77         c1_0.credit_card,
+#14 33.77         c1_0.name,
+#14 33.77         c1_0.pointfidele 
+#14 33.77     from
+#14 33.77         customer c1_0 
+#14 33.77     left join
+#14 33.77         customer_cart c2_0 
+#14 33.77             on c1_0.id=c2_0.customer_id 
+#14 33.77     where
+#14 33.77         c1_0.id=?
+#14 33.77 2024-03-06T10:23:58.428Z  INFO 69 --- [           main] f.u.simpletcfs.components.CartHandler    : TCFS:Cart-Component: Updating cart of John with -2xCHOCOLALALA
+#14 33.77 Hibernate: 
+#14 33.77     delete 
+#14 33.77     from
+#14 33.77         customer_cart 
+#14 33.77     where
+#14 33.77         customer_id=?
+#14 33.77 Hibernate: 
+#14 33.77     select
+#14 33.77         c1_0.id,
+#14 33.77         c2_0.customer_id,
+#14 33.77         c2_0.cookie,
+#14 33.77         c2_0.quantity,
+#14 33.77         c1_0.credit_card,
+#14 33.77         c1_0.name,
+#14 33.77         c1_0.pointfidele 
+#14 33.77     from
+#14 33.77         customer c1_0 
+#14 33.77     left join
+#14 33.77         customer_cart c2_0 
+#14 33.77             on c1_0.id=c2_0.customer_id 
+#14 33.77     where
+#14 33.77         c1_0.id=?
+#14 33.77 Hibernate: 
+#14 33.77     select
+#14 33.77         c1_0.id,
+#14 33.77         c2_0.customer_id,
+#14 33.77         c2_0.cookie,
+#14 33.77         c2_0.quantity,
+#14 33.77         c1_0.credit_card,
+#14 33.77         c1_0.name,
+#14 33.77         c1_0.pointfidele 
+#14 33.77     from
+#14 33.77         customer c1_0 
+#14 33.77     left join
+#14 33.77         customer_cart c2_0 
+#14 33.77             on c1_0.id=c2_0.customer_id 
+#14 33.77     where
+#14 33.77         c1_0.id=?
+#14 33.77 2024-03-06T10:23:58.438Z  INFO 69 --- [           main] f.u.simpletcfs.components.CartHandler    : TCFS:Cart-Component: Updating cart of John with 6xCHOCOLALALA
+#14 33.77 Hibernate: 
+#14 33.77     insert 
+#14 33.77     into
+#14 33.77         customer_cart
+#14 33.77         (customer_id, cookie, quantity) 
+#14 33.77     values
+#14 33.77         (?, ?, ?)
+#14 33.77 Hibernate: 
+#14 33.77     select
+#14 33.77         c1_0.id,
+#14 33.77         c2_0.customer_id,
+#14 33.77         c2_0.cookie,
+#14 33.77         c2_0.quantity,
+#14 33.77         c1_0.credit_card,
+#14 33.77         c1_0.name,
+#14 33.77         c1_0.pointfidele 
+#14 33.77     from
+#14 33.77         customer c1_0 
+#14 33.77     left join
+#14 33.77         customer_cart c2_0 
+#14 33.77             on c1_0.id=c2_0.customer_id 
+#14 33.77     where
+#14 33.77         c1_0.id=?
+#14 33.77 2024-03-06T10:23:58.445Z  INFO 69 --- [           main] f.u.simpletcfs.components.CartHandler    : TCFS:Cart-Component: Updating cart of John with -5xCHOCOLALALA
+#14 33.77 Hibernate: 
+#14 33.77     delete 
+#14 33.77     from
+#14 33.77         customer_cart 
+#14 33.77     where
+#14 33.77         customer_id=? 
+#14 33.77         and quantity=?
+#14 33.77 Hibernate: 
+#14 33.77     insert 
+#14 33.77     into
+#14 33.77         customer_cart
+#14 33.77         (customer_id, cookie, quantity) 
+#14 33.77     values
+#14 33.77         (?, ?, ?)
+#14 33.77 Hibernate: 
+#14 33.77     select
+#14 33.77         c1_0.id,
+#14 33.77         c2_0.customer_id,
+#14 33.77         c2_0.cookie,
+#14 33.77         c2_0.quantity,
+#14 33.77         c1_0.credit_card,
+#14 33.77         c1_0.name,
+#14 33.77         c1_0.pointfidele 
+#14 33.77     from
+#14 33.77         customer c1_0 
+#14 33.77     left join
+#14 33.77         customer_cart c2_0 
+#14 33.77             on c1_0.id=c2_0.customer_id 
+#14 33.77     where
+#14 33.77         c1_0.id=?
+#14 33.77 Hibernate: 
+#14 33.77     select
+#14 33.77         c1_0.id,
+#14 33.77         c1_0.credit_card,
+#14 33.77         c1_0.name,
+#14 33.77         c1_0.pointfidele 
+#14 33.77     from
+#14 33.77         customer c1_0 
+#14 33.77     where
+#14 33.77         c1_0.name=?
+#14 33.77 Hibernate: 
+#14 33.77     select
+#14 33.77         c1_0.customer_id,
+#14 33.77         c1_0.cookie,
+#14 33.77         c1_0.quantity 
+#14 33.77     from
+#14 33.77         customer_cart c1_0 
+#14 33.77     where
+#14 33.77         c1_0.customer_id=?
+#14 33.77 Hibernate: 
+#14 33.77     select
+#14 33.77         c1_0.id,
+#14 33.77         c2_0.customer_id,
+#14 33.77         c2_0.cookie,
+#14 33.77         c2_0.quantity,
+#14 33.77         c1_0.credit_card,
+#14 33.77         c1_0.name,
+#14 33.77         c1_0.pointfidele 
+#14 33.77     from
+#14 33.77         customer c1_0 
+#14 33.77     left join
+#14 33.77         customer_cart c2_0 
+#14 33.77             on c1_0.id=c2_0.customer_id 
+#14 33.77     where
+#14 33.77         c1_0.id=?
+#14 33.77 Hibernate: 
+#14 33.77     select
+#14 33.77         b1_0.customer_id,
+#14 33.77         b1_0.id,
+#14 33.77         a1_0.id,
+#14 33.77         a1_0.prix,
+#14 33.77         a1_0.nb_places,
+#14 33.77         a1_0.nom_activite,
+#14 33.77         b1_0.date_reservation,
+#14 33.77         b1_0.payment_receipt_id 
+#14 33.77     from
+#14 33.77         booking b1_0 
+#14 33.77     left join
+#14 33.77         activity a1_0 
+#14 33.77             on a1_0.id=b1_0.activity_id 
+#14 33.77     where
+#14 33.77         b1_0.customer_id=?
+#14 33.77 Hibernate: 
+#14 33.77     select
+#14 33.77         o1_0.customer_id,
+#14 33.77         o1_0.id,
+#14 33.77         o1_0.pay_receipt_id,
+#14 33.77         o1_0.price,
+#14 33.77         o1_0.status 
+#14 33.77     from
+#14 33.77         orders o1_0 
+#14 33.77     where
+#14 33.77         o1_0.customer_id=?
+#14 33.77 Hibernate: 
+#14 33.77     delete 
+#14 33.77     from
+#14 33.77         customer_cart 
+#14 33.77     where
+#14 33.77         customer_id=?
+#14 33.77 Hibernate: 
+#14 33.77     delete 
+#14 33.77     from
+#14 33.77         customer 
+#14 33.77     where
+#14 33.77         id=?
+#14 33.81 Hibernate: 
+#14 33.81     select
+#14 33.81         c1_0.id,
+#14 33.81         c1_0.credit_card,
+#14 33.81         c1_0.name,
+#14 33.81         c1_0.pointfidele 
+#14 33.81     from
+#14 33.81         customer c1_0 
+#14 33.81     where
+#14 33.81         c1_0.name=?
+#14 33.81 Hibernate: 
+#14 33.81     insert 
+#14 33.81     into
+#14 33.81         customer
+#14 33.81         (credit_card, name, pointfidele, id) 
+#14 33.81     values
+#14 33.81         (?, ?, ?, ?)
+#14 33.81 Hibernate: 
+#14 33.81     select
+#14 33.81         c1_0.id,
+#14 33.81         c2_0.customer_id,
+#14 33.81         c2_0.cookie,
+#14 33.81         c2_0.quantity,
+#14 33.81         c1_0.credit_card,
+#14 33.81         c1_0.name,
+#14 33.81         c1_0.pointfidele 
+#14 33.81     from
+#14 33.81         customer c1_0 
+#14 33.81     left join
+#14 33.81         customer_cart c2_0 
+#14 33.81             on c1_0.id=c2_0.customer_id 
+#14 33.81     where
+#14 33.81         c1_0.id=?
+#14 33.81 Hibernate: 
+#14 33.81     select
+#14 33.81         c1_0.id,
+#14 33.81         c2_0.customer_id,
+#14 33.81         c2_0.cookie,
+#14 33.81         c2_0.quantity,
+#14 33.81         c1_0.credit_card,
+#14 33.81         c1_0.name,
+#14 33.81         c1_0.pointfidele 
+#14 33.81     from
+#14 33.81         customer c1_0 
+#14 33.81     left join
+#14 33.81         customer_cart c2_0 
+#14 33.81             on c1_0.id=c2_0.customer_id 
+#14 33.81     where
+#14 33.81         c1_0.id=?
+#14 33.81 Hibernate: 
+#14 33.81     select
+#14 33.81         c1_0.id,
+#14 33.81         c1_0.credit_card,
+#14 33.81         c1_0.name,
+#14 33.81         c1_0.pointfidele 
+#14 33.81     from
+#14 33.81         customer c1_0 
+#14 33.81     where
+#14 33.81         c1_0.name=?
+#14 33.81 Hibernate: 
+#14 33.81     select
+#14 33.81         c1_0.customer_id,
+#14 33.81         c1_0.cookie,
+#14 33.81         c1_0.quantity 
+#14 33.81     from
+#14 33.81         customer_cart c1_0 
+#14 33.81     where
+#14 33.81         c1_0.customer_id=?
+#14 33.81 Hibernate: 
+#14 33.81     select
+#14 33.81         c1_0.id,
+#14 33.81         c2_0.customer_id,
+#14 33.81         c2_0.cookie,
+#14 33.81         c2_0.quantity,
+#14 33.81         c1_0.credit_card,
+#14 33.81         c1_0.name,
+#14 33.81         c1_0.pointfidele 
+#14 33.81     from
+#14 33.81         customer c1_0 
+#14 33.81     left join
+#14 33.81         customer_cart c2_0 
+#14 33.81             on c1_0.id=c2_0.customer_id 
+#14 33.81     where
+#14 33.81         c1_0.id=?
+#14 33.81 Hibernate: 
+#14 33.81     select
+#14 33.81         b1_0.customer_id,
+#14 33.81         b1_0.id,
+#14 33.81         a1_0.id,
+#14 33.81         a1_0.prix,
+#14 33.81         a1_0.nb_places,
+#14 33.81         a1_0.nom_activite,
+#14 33.81         b1_0.date_reservation,
+#14 33.81         b1_0.payment_receipt_id 
+#14 33.81     from
+#14 33.81         booking b1_0 
+#14 33.81     left join
+#14 33.81         activity a1_0 
+#14 33.81             on a1_0.id=b1_0.activity_id 
+#14 33.81     where
+#14 33.81         b1_0.customer_id=?
+#14 33.81 Hibernate: 
+#14 33.81     select
+#14 33.81         o1_0.customer_id,
+#14 33.81         o1_0.id,
+#14 33.81         o1_0.pay_receipt_id,
+#14 33.81         o1_0.price,
+#14 33.81         o1_0.status 
+#14 33.81     from
+#14 33.81         orders o1_0 
+#14 33.81     where
+#14 33.81         o1_0.customer_id=?
+#14 33.81 Hibernate: 
+#14 33.81     delete 
+#14 33.81     from
+#14 33.81         customer 
+#14 33.81     where
+#14 33.81         id=?
+#14 33.87 Hibernate: 
+#14 33.87     select
+#14 33.87         c1_0.id,
+#14 33.87         c1_0.credit_card,
+#14 33.87         c1_0.name,
+#14 33.87         c1_0.pointfidele 
+#14 33.87     from
+#14 33.87         customer c1_0 
+#14 33.87     where
+#14 33.87         c1_0.name=?
+#14 33.87 Hibernate: 
+#14 33.87     insert 
+#14 33.87     into
+#14 33.87         customer
+#14 33.87         (credit_card, name, pointfidele, id) 
+#14 33.87     values
+#14 33.87         (?, ?, ?, ?)
+#14 33.87 Hibernate: 
+#14 33.87     select
+#14 33.87         c1_0.id,
+#14 33.87         c2_0.customer_id,
+#14 33.87         c2_0.cookie,
+#14 33.87         c2_0.quantity,
+#14 33.87         c1_0.credit_card,
+#14 33.87         c1_0.name,
+#14 33.87         c1_0.pointfidele 
+#14 33.87     from
+#14 33.87         customer c1_0 
+#14 33.87     left join
+#14 33.87         customer_cart c2_0 
+#14 33.87             on c1_0.id=c2_0.customer_id 
+#14 33.87     where
+#14 33.87         c1_0.id=?
+#14 33.87 2024-03-06T10:23:58.533Z  INFO 69 --- [           main] f.u.simpletcfs.components.CartHandler    : TCFS:Cart-Component: Updating cart of John with 2xCHOCOLALALA
+#14 33.87 Hibernate: 
+#14 33.87     insert 
+#14 33.87     into
+#14 33.87         customer_cart
+#14 33.87         (customer_id, cookie, quantity) 
+#14 33.87     values
+#14 33.87         (?, ?, ?)
+#14 33.87 Hibernate: 
+#14 33.87     select
+#14 33.87         c1_0.id,
+#14 33.87         c2_0.customer_id,
+#14 33.87         c2_0.cookie,
+#14 33.87         c2_0.quantity,
+#14 33.87         c1_0.credit_card,
+#14 33.87         c1_0.name,
+#14 33.87         c1_0.pointfidele 
+#14 33.87     from
+#14 33.87         customer c1_0 
+#14 33.87     left join
+#14 33.87         customer_cart c2_0 
+#14 33.87             on c1_0.id=c2_0.customer_id 
+#14 33.87     where
+#14 33.87         c1_0.id=?
+#14 33.87 2024-03-06T10:23:58.537Z  INFO 69 --- [           main] f.u.simpletcfs.components.CartHandler    : TCFS:Cart-Component: Updating cart of John with 3xDARK_TEMPTATION
+#14 33.87 Hibernate: 
+#14 33.87     insert 
+#14 33.87     into
+#14 33.87         customer_cart
+#14 33.87         (customer_id, cookie, quantity) 
+#14 33.87     values
+#14 33.87         (?, ?, ?)
+#14 33.87 Hibernate: 
+#14 33.87     select
+#14 33.87         c1_0.id,
+#14 33.87         c2_0.customer_id,
+#14 33.87         c2_0.cookie,
+#14 33.87         c2_0.quantity,
+#14 33.87         c1_0.credit_card,
+#14 33.87         c1_0.name,
+#14 33.87         c1_0.pointfidele 
+#14 33.87     from
+#14 33.87         customer c1_0 
+#14 33.87     left join
+#14 33.87         customer_cart c2_0 
+#14 33.87             on c1_0.id=c2_0.customer_id 
+#14 33.87     where
+#14 33.87         c1_0.id=?
+#14 33.88 2024-03-06T10:23:58.542Z  INFO 69 --- [           main] f.u.simpletcfs.components.CartHandler    : TCFS:Cart-Component: Updating cart of John with 3xCHOCOLALALA
+#14 33.88 Hibernate: 
+#14 33.88     delete 
+#14 33.88     from
+#14 33.88         customer_cart 
+#14 33.88     where
+#14 33.88         customer_id=? 
+#14 33.88         and quantity=?
+#14 33.88 Hibernate: 
+#14 33.88     insert 
+#14 33.88     into
+#14 33.88         customer_cart
+#14 33.88         (customer_id, cookie, quantity) 
+#14 33.88     values
+#14 33.88         (?, ?, ?)
+#14 33.88 Hibernate: 
+#14 33.88     select
+#14 33.88         c1_0.id,
+#14 33.88         c2_0.customer_id,
+#14 33.88         c2_0.cookie,
+#14 33.88         c2_0.quantity,
+#14 33.88         c1_0.credit_card,
+#14 33.88         c1_0.name,
+#14 33.88         c1_0.pointfidele 
+#14 33.88     from
+#14 33.88         customer c1_0 
+#14 33.88     left join
+#14 33.88         customer_cart c2_0 
+#14 33.88             on c1_0.id=c2_0.customer_id 
+#14 33.88     where
+#14 33.88         c1_0.id=?
+#14 33.88 Hibernate: 
+#14 33.88     select
+#14 33.88         c1_0.id,
+#14 33.88         c1_0.credit_card,
+#14 33.88         c1_0.name,
+#14 33.88         c1_0.pointfidele 
+#14 33.88     from
+#14 33.88         customer c1_0 
+#14 33.88     where
+#14 33.88         c1_0.name=?
+#14 33.88 Hibernate: 
+#14 33.88     select
+#14 33.88         c1_0.customer_id,
+#14 33.88         c1_0.cookie,
+#14 33.88         c1_0.quantity 
+#14 33.88     from
+#14 33.88         customer_cart c1_0 
+#14 33.88     where
+#14 33.88         c1_0.customer_id=?
+#14 33.88 Hibernate: 
+#14 33.88     select
+#14 33.88         c1_0.id,
+#14 33.88         c2_0.customer_id,
+#14 33.88         c2_0.cookie,
+#14 33.88         c2_0.quantity,
+#14 33.88         c1_0.credit_card,
+#14 33.88         c1_0.name,
+#14 33.88         c1_0.pointfidele 
+#14 33.88     from
+#14 33.88         customer c1_0 
+#14 33.88     left join
+#14 33.88         customer_cart c2_0 
+#14 33.88             on c1_0.id=c2_0.customer_id 
+#14 33.88     where
+#14 33.88         c1_0.id=?
+#14 33.88 Hibernate: 
+#14 33.88     select
+#14 33.88         b1_0.customer_id,
+#14 33.88         b1_0.id,
+#14 33.88         a1_0.id,
+#14 33.88         a1_0.prix,
+#14 33.88         a1_0.nb_places,
+#14 33.88         a1_0.nom_activite,
+#14 33.88         b1_0.date_reservation,
+#14 33.88         b1_0.payment_receipt_id 
+#14 33.88     from
+#14 33.88         booking b1_0 
+#14 33.88     left join
+#14 33.88         activity a1_0 
+#14 33.88             on a1_0.id=b1_0.activity_id 
+#14 33.88     where
+#14 33.88         b1_0.customer_id=?
+#14 33.88 Hibernate: 
+#14 33.88     select
+#14 33.88         o1_0.customer_id,
+#14 33.88         o1_0.id,
+#14 33.88         o1_0.pay_receipt_id,
+#14 33.88         o1_0.price,
+#14 33.88         o1_0.status 
+#14 33.88     from
+#14 33.88         orders o1_0 
+#14 33.88     where
+#14 33.88         o1_0.customer_id=?
+#14 33.88 Hibernate: 
+#14 33.88     delete 
+#14 33.88     from
+#14 33.88         customer_cart 
+#14 33.88     where
+#14 33.88         customer_id=?
+#14 33.88 Hibernate: 
+#14 33.88     delete 
+#14 33.88     from
+#14 33.88         customer 
+#14 33.88     where
+#14 33.88         id=?
+#14 33.91 Hibernate: 
+#14 33.91     select
+#14 33.91         c1_0.id,
+#14 33.91         c1_0.credit_card,
+#14 33.91         c1_0.name,
+#14 33.91         c1_0.pointfidele 
+#14 33.91     from
+#14 33.91         customer c1_0 
+#14 33.91     where
+#14 33.91         c1_0.name=?
+#14 33.91 Hibernate: 
+#14 33.91     insert 
+#14 33.91     into
+#14 33.91         customer
+#14 33.91         (credit_card, name, pointfidele, id) 
+#14 33.91     values
+#14 33.91         (?, ?, ?, ?)
+#14 33.91 Hibernate: 
+#14 33.91     select
+#14 33.91         c1_0.id,
+#14 33.91         c2_0.customer_id,
+#14 33.91         c2_0.cookie,
+#14 33.91         c2_0.quantity,
+#14 33.91         c1_0.credit_card,
+#14 33.91         c1_0.name,
+#14 33.91         c1_0.pointfidele 
+#14 33.91     from
+#14 33.91         customer c1_0 
+#14 33.91     left join
+#14 33.91         customer_cart c2_0 
+#14 33.91             on c1_0.id=c2_0.customer_id 
+#14 33.91     where
+#14 33.91         c1_0.id=?
+#14 33.91 Hibernate: 
+#14 33.91     select
+#14 33.91         c1_0.id,
+#14 33.91         c1_0.credit_card,
+#14 33.91         c1_0.name,
+#14 33.91         c1_0.pointfidele 
+#14 33.91     from
+#14 33.91         customer c1_0 
+#14 33.91     where
+#14 33.91         c1_0.name=?
+#14 33.91 Hibernate: 
+#14 33.91     select
+#14 33.91         c1_0.customer_id,
+#14 33.91         c1_0.cookie,
+#14 33.91         c1_0.quantity 
+#14 33.91     from
+#14 33.91         customer_cart c1_0 
+#14 33.91     where
+#14 33.91         c1_0.customer_id=?
+#14 33.91 Hibernate: 
+#14 33.91     select
+#14 33.91         c1_0.id,
+#14 33.91         c2_0.customer_id,
+#14 33.91         c2_0.cookie,
+#14 33.91         c2_0.quantity,
+#14 33.91         c1_0.credit_card,
+#14 33.91         c1_0.name,
+#14 33.91         c1_0.pointfidele 
+#14 33.91     from
+#14 33.91         customer c1_0 
+#14 33.91     left join
+#14 33.91         customer_cart c2_0 
+#14 33.91             on c1_0.id=c2_0.customer_id 
+#14 33.91     where
+#14 33.91         c1_0.id=?
+#14 33.91 Hibernate: 
+#14 33.91     select
+#14 33.91         b1_0.customer_id,
+#14 33.91         b1_0.id,
+#14 33.91         a1_0.id,
+#14 33.91         a1_0.prix,
+#14 33.91         a1_0.nb_places,
+#14 33.91         a1_0.nom_activite,
+#14 33.91         b1_0.date_reservation,
+#14 33.91         b1_0.payment_receipt_id 
+#14 33.91     from
+#14 33.91         booking b1_0 
+#14 33.91     left join
+#14 33.91         activity a1_0 
+#14 33.91             on a1_0.id=b1_0.activity_id 
+#14 33.91     where
+#14 33.91         b1_0.customer_id=?
+#14 33.91 Hibernate: 
+#14 33.91     select
+#14 33.91         o1_0.customer_id,
+#14 33.91         o1_0.id,
+#14 33.91         o1_0.pay_receipt_id,
+#14 33.91         o1_0.price,
+#14 33.91         o1_0.status 
+#14 33.91     from
+#14 33.91         orders o1_0 
+#14 33.91     where
+#14 33.91         o1_0.customer_id=?
+#14 33.91 Hibernate: 
+#14 33.91     delete 
+#14 33.91     from
+#14 33.91         customer 
+#14 33.91     where
+#14 33.91         id=?
+#14 33.94 [INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.573 s -- in fr.univcotedazur.simpletcfs.components.CartHandlerTest
+#14 33.94 [INFO] Running fr.univcotedazur.simpletcfs.repositories.CustomerRepositoryTest
+#14 34.12 2024-03-06T10:23:58.777Z  INFO 69 --- [           main] f.u.s.r.CustomerRepositoryTest           : Starting CustomerRepositoryTest using Java 17.0.10 with PID 69 (started by root in /opt/app)
+#14 34.12 2024-03-06T10:23:58.778Z  INFO 69 --- [           main] f.u.s.r.CustomerRepositoryTest           : No active profile set, falling back to 1 default profile: "default"
+#14 34.52 2024-03-06T10:23:59.202Z  INFO 69 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+#14 34.52 2024-03-06T10:23:59.208Z  INFO 69 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+#14 34.82 2024-03-06T10:23:59.492Z  INFO 69 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+#14 34.82 Hibernate: drop table if exists activity cascade 
+#14 34.82 Hibernate: drop table if exists booking cascade 
+#14 34.82 Hibernate: drop table if exists customer cascade 
+#14 34.82 Hibernate: drop table if exists customer_cart cascade 
+#14 34.82 Hibernate: drop table if exists order_items cascade 
+#14 34.82 Hibernate: drop table if exists orders cascade 
+#14 34.82 Hibernate: drop sequence if exists activity_seq
+#14 34.82 Hibernate: drop sequence if exists booking_seq
+#14 34.82 Hibernate: drop sequence if exists customer_seq
+#14 34.82 Hibernate: drop sequence if exists orders_seq
+#14 34.82 Hibernate: create sequence activity_seq start with 1 increment by 50
+#14 34.82 Hibernate: create sequence booking_seq start with 1 increment by 50
+#14 34.82 Hibernate: create sequence customer_seq start with 1 increment by 50
+#14 34.82 Hibernate: create sequence orders_seq start with 1 increment by 50
+#14 34.82 Hibernate: create table activity (nb_places integer not null, prix float(24) not null, id bigint not null, nom_activite varchar(255), primary key (id))
+#14 34.82 Hibernate: create table booking (date_reservation date, activity_id bigint, customer_id bigint, id bigint not null, payment_receipt_id bigint, primary key (id))
+#14 34.82 Hibernate: create table customer (pointfidele integer not null, id bigint not null, credit_card varchar(255), name varchar(255) unique, primary key (id))
+#14 34.82 Hibernate: create table customer_cart (quantity integer not null, customer_id bigint not null, cookie varchar(255) check (cookie in ('CHOCOLALALA','DARK_TEMPTATION','SOO_CHOCOLATE')))
+#14 34.82 Hibernate: create table order_items (quantity integer not null, order_id bigint not null, cookie varchar(255) check (cookie in ('CHOCOLALALA','DARK_TEMPTATION','SOO_CHOCOLATE')))
+#14 34.82 Hibernate: create table orders (price float(53) not null, customer_id bigint, id bigint not null, pay_receipt_id varchar(255), status varchar(255) check (status in ('CANCELLED','IN_PROGRESS','FINISHED')), primary key (id))
+#14 34.82 Hibernate: alter table if exists booking add constraint FKn3p0dqhv1p3hl1gv6a2ltvsbu foreign key (activity_id) references activity
+#14 34.82 Hibernate: alter table if exists booking add constraint FKlnnelfsha11xmo2ndjq66fvro foreign key (customer_id) references customer
+#14 34.82 Hibernate: alter table if exists customer_cart add constraint FKeaqo5asykq66fm0cfdrhoiyv7 foreign key (customer_id) references customer
+#14 34.82 Hibernate: alter table if exists order_items add constraint FKbioxgbv59vetrxe0ejfubep1w foreign key (order_id) references orders
+#14 34.82 Hibernate: alter table if exists orders add constraint FK624gtjin3po807j3vix093tlf foreign key (customer_id) references customer
+#14 35.20 2024-03-06T10:23:59.895Z  INFO 69 --- [           main] f.u.s.r.CustomerRepositoryTest           : Started CustomerRepositoryTest in 1.195 seconds (process running for 21.339)
+#14 35.22 Hibernate: select next value for customer_seq
+#14 35.27 Hibernate: select next value for customer_seq
+#14 35.29 Hibernate: insert into customer (credit_card,name,pointfidele,id) values (?,?,?,?)
+#14 35.29 Hibernate: select c1_0.id,c1_0.credit_card,c1_0.name,c1_0.pointfidele from customer c1_0 where c1_0.name=?
+#14 35.32 Hibernate: insert into customer (credit_card,name,pointfidele,id) values (?,?,?,?)
+#14 35.32 Hibernate: insert into customer (credit_card,name,pointfidele,id) values (?,?,?,?)
+#14 35.32 2024-03-06T10:24:00.021Z  WARN 69 --- [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 23505, SQLState: 23505
+#14 35.32 2024-03-06T10:24:00.022Z ERROR 69 --- [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : Unique index or primary key violation: "PUBLIC.CONSTRAINT_INDEX_5 ON PUBLIC.CUSTOMER(NAME NULLS FIRST) VALUES ( /* 4 */ 'john' )"; SQL statement:
+#14 35.32 insert into customer (credit_card,name,pointfidele,id) values (?,?,?,?) [23505-224]
+#14 35.32 Hibernate: insert into customer (credit_card,name,pointfidele,id) values (?,?,?,?)
+#14 35.32 2024-03-06T10:24:00.029Z  WARN 69 --- [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 23505, SQLState: 23505
+#14 35.32 2024-03-06T10:24:00.030Z ERROR 69 --- [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : Unique index or primary key violation: "PUBLIC.CONSTRAINT_INDEX_5 ON PUBLIC.CUSTOMER(NAME NULLS FIRST) VALUES ( /* 4 */ 'john' )"; SQL statement:
+#14 35.32 insert into customer (credit_card,name,pointfidele,id) values (?,?,?,?) [23505-224]
+#14 35.35 [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.424 s -- in fr.univcotedazur.simpletcfs.repositories.CustomerRepositoryTest
+#14 35.35 [INFO] Running fr.univcotedazur.simpletcfs.repositories.EqualityTest
+#14 35.36 [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in fr.univcotedazur.simpletcfs.repositories.EqualityTest
+#14 35.36 [INFO] Running fr.univcotedazur.simpletcfs.controllers.RecipeWebMvcTest
+#14 35.53 2024-03-06T10:24:00.137Z  INFO 69 --- [           main] f.u.s.controllers.RecipeWebMvcTest       : Starting RecipeWebMvcTest using Java 17.0.10 with PID 69 (started by root in /opt/app)
+#14 35.53 2024-03-06T10:24:00.138Z  INFO 69 --- [           main] f.u.s.controllers.RecipeWebMvcTest       : No active profile set, falling back to 1 default profile: "default"
+#14 36.01 2024-03-06T10:24:00.714Z  INFO 69 --- [           main] f.u.s.controllers.RecipeWebMvcTest       : Started RecipeWebMvcTest in 0.61 seconds (process running for 22.158)
+#14 36.05 
+#14 36.05 MockHttpServletRequest:
+#14 36.05       HTTP Method = GET
+#14 36.05       Request URI = /recipes
+#14 36.05        Parameters = {}
+#14 36.05           Headers = [Content-Type:"application/json;charset=UTF-8"]
+#14 36.05              Body = null
+#14 36.05     Session Attrs = {}
+#14 36.05 
+#14 36.05 Handler:
+#14 36.05              Type = fr.univcotedazur.simpletcfs.controllers.RecipeController
+#14 36.05            Method = fr.univcotedazur.simpletcfs.controllers.RecipeController#listAllRecipes()
+#14 36.05 
+#14 36.05 Async:
+#14 36.05     Async started = false
+#14 36.05      Async result = null
+#14 36.05 
+#14 36.05 Resolved Exception:
+#14 36.05              Type = null
+#14 36.05 
+#14 36.05 ModelAndView:
+#14 36.05         View name = null
+#14 36.05              View = null
+#14 36.05             Model = null
+#14 36.05 
+#14 36.05 FlashMap:
+#14 36.05        Attributes = null
+#14 36.05 
+#14 36.05 MockHttpServletResponse:
+#14 36.05            Status = 200
+#14 36.05     Error message = null
+#14 36.05           Headers = [Content-Type:"application/json"]
+#14 36.05      Content type = application/json
+#14 36.05              Body = ["CHOCOLALALA","DARK_TEMPTATION"]
+#14 36.05     Forwarded URL = null
+#14 36.05    Redirected URL = null
+#14 36.05           Cookies = []
+#14 36.07 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.690 s -- in fr.univcotedazur.simpletcfs.controllers.RecipeWebMvcTest
+#14 36.21 [INFO] 
+#14 36.21 [INFO] Results:
+#14 36.21 [INFO] 
+#14 36.21 [INFO] Tests run: 25, Failures: 0, Errors: 0, Skipped: 0
+#14 36.21 [INFO] 
+#14 36.22 [INFO] 
+#14 36.22 [INFO] --- jar:3.3.0:jar (default-jar) @ simpleTCFS ---
+#14 36.63 [INFO] Building jar: /opt/app/target/simpleTCFS-0.0.1-SNAPSHOT.jar
+#14 36.74 [INFO] 
+#14 36.74 [INFO] --- spring-boot:3.2.0:repackage (repackage) @ simpleTCFS ---
+#14 37.67 [INFO] Replacing main artifact /opt/app/target/simpleTCFS-0.0.1-SNAPSHOT.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+#14 37.67 [INFO] The original artifact has been renamed to /opt/app/target/simpleTCFS-0.0.1-SNAPSHOT.jar.original
+#14 37.67 [INFO] 
+#14 37.67 [INFO] --- failsafe:3.1.2:integration-test (default) @ simpleTCFS ---
+#14 37.82 [INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+#14 37.87 [INFO] 
+#14 37.87 [INFO] -------------------------------------------------------
+#14 37.87 [INFO]  T E S T S
+#14 37.87 [INFO] -------------------------------------------------------
+#14 39.57 [INFO] Running fr.univcotedazur.simpletcfs.controllers.CustomerCareWebValidationIT
+#14 41.16 2024-03-06T10:24:05.803Z  INFO 164 --- [           main] f.u.s.c.CustomerCareWebValidationIT      : Starting CustomerCareWebValidationIT using Java 17.0.10 with PID 164 (started by root in /opt/app)
+#14 41.16 2024-03-06T10:24:05.808Z  INFO 164 --- [           main] f.u.s.c.CustomerCareWebValidationIT      : No active profile set, falling back to 1 default profile: "default"
+#14 44.77 2024-03-06T10:24:09.449Z  INFO 164 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+#14 44.77 2024-03-06T10:24:09.450Z  INFO 164 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+#14 44.87 2024-03-06T10:24:09.554Z  INFO 164 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+#14 45.67 2024-03-06T10:24:10.355Z  INFO 164 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+#14 45.97 2024-03-06T10:24:10.661Z  INFO 164 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:db user=SA
+#14 45.97 2024-03-06T10:24:10.665Z  INFO 164 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+#14 46.07 2024-03-06T10:24:10.758Z  INFO 164 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+#14 46.17 2024-03-06T10:24:10.857Z  INFO 164 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
+#14 46.27 2024-03-06T10:24:10.921Z  INFO 164 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+#14 46.67 2024-03-06T10:24:11.372Z  WARN 164 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+#14 48.48 2024-03-06T10:24:13.124Z  INFO 164 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+#14 48.48 Hibernate: 
+#14 48.48     drop table if exists activity cascade 
+#14 48.48 Hibernate: 
+#14 48.48     drop table if exists booking cascade 
+#14 48.48 Hibernate: 
+#14 48.48     drop table if exists customer cascade 
+#14 48.48 Hibernate: 
+#14 48.48     drop table if exists customer_cart cascade 
+#14 48.48 Hibernate: 
+#14 48.48     drop table if exists order_items cascade 
+#14 48.48 Hibernate: 
+#14 48.48     drop table if exists orders cascade 
+#14 48.48 Hibernate: 
+#14 48.48     drop sequence if exists activity_seq
+#14 48.48 Hibernate: 
+#14 48.48     drop sequence if exists booking_seq
+#14 48.48 Hibernate: 
+#14 48.48     drop sequence if exists customer_seq
+#14 48.48 Hibernate: 
+#14 48.48     drop sequence if exists orders_seq
+#14 48.48 Hibernate: 
+#14 48.48     create sequence activity_seq start with 1 increment by 50
+#14 48.48 Hibernate: 
+#14 48.48     create sequence booking_seq start with 1 increment by 50
+#14 48.48 Hibernate: 
+#14 48.48     create sequence customer_seq start with 1 increment by 50
+#14 48.48 Hibernate: 
+#14 48.48     create sequence orders_seq start with 1 increment by 50
+#14 48.48 Hibernate: 
+#14 48.48     create table activity (
+#14 48.48         nb_places integer not null,
+#14 48.48         prix float(24) not null,
+#14 48.48         id bigint not null,
+#14 48.48         nom_activite varchar(255),
+#14 48.48         primary key (id)
+#14 48.48     )
+#14 48.58 Hibernate: 
+#14 48.58     create table booking (
+#14 48.58         date_reservation date,
+#14 48.58         activity_id bigint,
+#14 48.58         customer_id bigint,
+#14 48.58         id bigint not null,
+#14 48.58         payment_receipt_id bigint,
+#14 48.58         primary key (id)
+#14 48.58     )
+#14 48.58 Hibernate: 
+#14 48.58     create table customer (
+#14 48.58         pointfidele integer not null,
+#14 48.58         id bigint not null,
+#14 48.58         credit_card varchar(255),
+#14 48.58         name varchar(255) unique,
+#14 48.58         primary key (id)
+#14 48.58     )
+#14 48.58 Hibernate: 
+#14 48.58     create table customer_cart (
+#14 48.58         quantity integer not null,
+#14 48.58         customer_id bigint not null,
+#14 48.58         cookie varchar(255) check (cookie in ('CHOCOLALALA','DARK_TEMPTATION','SOO_CHOCOLATE'))
+#14 48.58     )
+#14 48.58 Hibernate: 
+#14 48.58     create table order_items (
+#14 48.58         quantity integer not null,
+#14 48.58         order_id bigint not null,
+#14 48.58         cookie varchar(255) check (cookie in ('CHOCOLALALA','DARK_TEMPTATION','SOO_CHOCOLATE'))
+#14 48.58     )
+#14 48.58 Hibernate: 
+#14 48.58     create table orders (
+#14 48.58         price float(53) not null,
+#14 48.58         customer_id bigint,
+#14 48.58         id bigint not null,
+#14 48.58         pay_receipt_id varchar(255),
+#14 48.58         status varchar(255) check (status in ('CANCELLED','IN_PROGRESS','FINISHED')),
+#14 48.58         primary key (id)
+#14 48.58     )
+#14 48.58 Hibernate: 
+#14 48.58     alter table if exists booking 
+#14 48.58        add constraint FKn3p0dqhv1p3hl1gv6a2ltvsbu 
+#14 48.58        foreign key (activity_id) 
+#14 48.58        references activity
+#14 48.58 Hibernate: 
+#14 48.58     alter table if exists booking 
+#14 48.58        add constraint FKlnnelfsha11xmo2ndjq66fvro 
+#14 48.58        foreign key (customer_id) 
+#14 48.58        references customer
+#14 48.58 Hibernate: 
+#14 48.58     alter table if exists customer_cart 
+#14 48.58        add constraint FKeaqo5asykq66fm0cfdrhoiyv7 
+#14 48.58        foreign key (customer_id) 
+#14 48.58        references customer
+#14 48.58 Hibernate: 
+#14 48.58     alter table if exists order_items 
+#14 48.58        add constraint FKbioxgbv59vetrxe0ejfubep1w 
+#14 48.58        foreign key (order_id) 
+#14 48.58        references orders
+#14 48.58 Hibernate: 
+#14 48.58     alter table if exists orders 
+#14 48.58        add constraint FK624gtjin3po807j3vix093tlf 
+#14 48.58        foreign key (customer_id) 
+#14 48.58        references customer
+#14 53.79 2024-03-06T10:24:18.463Z  INFO 164 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring TestDispatcherServlet ''
+#14 54.09 2024-03-06T10:24:18.725Z  INFO 164 --- [           main] f.u.s.c.CustomerCareWebValidationIT      : Started CustomerCareWebValidationIT in 13.387 seconds (process running for 16.056)
+#14 54.50 OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+#14 55.00 Hibernate: 
+#14 55.00     select
+#14 55.00         c1_0.id,
+#14 55.00         c1_0.credit_card,
+#14 55.00         c1_0.name,
+#14 55.00         c1_0.pointfidele 
+#14 55.00     from
+#14 55.00         customer c1_0
+#14 55.40 2024-03-06T10:24:20.031Z  INFO 164 --- [           main] f.u.simpletcfs.aspects.ControllerLogger  : TCFS:Rest-Controller: fr.univcotedazur.simpletcfs.controllers.CustomerCareController@5a1f4fa4:Called register [CustomerDTO[id=null, name=john, creditCard=1234567890]]
+#14 55.40 Hibernate: 
+#14 55.40     select
+#14 55.40         c1_0.id,
+#14 55.40         c1_0.credit_card,
+#14 55.40         c1_0.name,
+#14 55.40         c1_0.pointfidele 
+#14 55.40     from
+#14 55.40         customer c1_0 
+#14 55.40     where
+#14 55.40         c1_0.name=?
+#14 55.40 Hibernate: 
+#14 55.40     select
+#14 55.40         next value for customer_seq
+#14 55.50 Hibernate: 
+#14 55.50     insert 
+#14 55.50     into
+#14 55.50         customer
+#14 55.50         (credit_card, name, pointfidele, id) 
+#14 55.50     values
+#14 55.50         (?, ?, ?, ?)
+#14 55.50 2024-03-06T10:24:20.190Z  INFO 164 --- [           main] f.u.simpletcfs.aspects.ControllerLogger  : TCFS:Rest-Controller: fr.univcotedazur.simpletcfs.controllers.CustomerCareController@5a1f4fa4:Returned register with value <201 CREATED Created,CustomerDTO[id=1, name=john, creditCard=1234567890],[]>
+#14 55.60 Hibernate: 
+#14 55.60     select
+#14 55.60         c1_0.id,
+#14 55.60         c1_0.credit_card,
+#14 55.60         c1_0.name,
+#14 55.60         c1_0.pointfidele 
+#14 55.60     from
+#14 55.60         customer c1_0
+#14 55.60 Hibernate: 
+#14 55.60     select
+#14 55.60         c1_0.customer_id,
+#14 55.60         c1_0.cookie,
+#14 55.60         c1_0.quantity 
+#14 55.60     from
+#14 55.60         customer_cart c1_0 
+#14 55.60     where
+#14 55.60         c1_0.customer_id=?
+#14 55.60 Hibernate: 
+#14 55.60     select
+#14 55.60         b1_0.customer_id,
+#14 55.60         b1_0.id,
+#14 55.60         a1_0.id,
+#14 55.60         a1_0.prix,
+#14 55.60         a1_0.nb_places,
+#14 55.60         a1_0.nom_activite,
+#14 55.60         b1_0.date_reservation,
+#14 55.60         b1_0.payment_receipt_id 
+#14 55.60     from
+#14 55.60         booking b1_0 
+#14 55.60     left join
+#14 55.60         activity a1_0 
+#14 55.60             on a1_0.id=b1_0.activity_id 
+#14 55.60     where
+#14 55.60         b1_0.customer_id=?
+#14 55.65 Hibernate: 
+#14 55.65     select
+#14 55.65         o1_0.customer_id,
+#14 55.65         o1_0.id,
+#14 55.65         o1_0.pay_receipt_id,
+#14 55.65         o1_0.price,
+#14 55.65         o1_0.status 
+#14 55.65     from
+#14 55.65         orders o1_0 
+#14 55.65     where
+#14 55.65         o1_0.customer_id=?
+#14 55.65 Hibernate: 
+#14 55.65     delete 
+#14 55.65     from
+#14 55.65         customer 
+#14 55.65     where
+#14 55.65         id=?
+#14 55.65 2024-03-06T10:24:20.341Z  INFO 164 --- [           main] f.u.simpletcfs.aspects.ControllerLogger  : TCFS:Rest-Controller: fr.univcotedazur.simpletcfs.controllers.CustomerCareController@5a1f4fa4:Called handleExceptions [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<fr.univcotedazur.simpletcfs.dto.CustomerDTO> fr.univcotedazur.simpletcfs.controllers.CustomerCareController.register(fr.univcotedazur.simpletcfs.dto.CustomerDTO): [Field error in object 'customerDTO' on field 'creditCard': rejected value [123]; codes [Pattern.customerDTO.creditCard,Pattern.creditCard,Pattern.java.lang.String,Pattern]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [customerDTO.creditCard,creditCard]; arguments []; default message [creditCard],[Ljakarta.validation.constraints.Pattern$Flag;@680410ec,\d{10}+]; default message [credit card should be exactly 10 digits]] ]
+#14 55.65 2024-03-06T10:24:20.343Z  INFO 164 --- [           main] f.u.simpletcfs.aspects.ControllerLogger  : TCFS:Rest-Controller: fr.univcotedazur.simpletcfs.controllers.CustomerCareController@5a1f4fa4:Returned handleExceptions with value ErrorDTO[error=Cannot process Customer information, details=Validation failed for argument [0] in public org.springframework.http.ResponseEntity<fr.univcotedazur.simpletcfs.dto.CustomerDTO> fr.univcotedazur.simpletcfs.controllers.CustomerCareController.register(fr.univcotedazur.simpletcfs.dto.CustomerDTO): [Field error in object 'customerDTO' on field 'creditCard': rejected value [123]; codes [Pattern.customerDTO.creditCard,Pattern.creditCard,Pattern.java.lang.String,Pattern]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [customerDTO.creditCard,creditCard]; arguments []; default message [creditCard],[Ljakarta.validation.constraints.Pattern$Flag;@680410ec,\d{10}+]; default message [credit card should be exactly 10 digits]] ]
+#14 55.69 [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 16.10 s -- in fr.univcotedazur.simpletcfs.controllers.CustomerCareWebValidationIT
+#14 55.69 [INFO] Running fr.univcotedazur.simpletcfs.controllers.RecipeWebAutoConfigureIT
+#14 55.70 2024-03-06T10:24:20.388Z  INFO 164 --- [           main] f.u.simpletcfs.aspects.ControllerLogger  : TCFS:Rest-Controller: fr.univcotedazur.simpletcfs.controllers.RecipeController@352bccf:Called listAllRecipes []
+#14 55.70 2024-03-06T10:24:20.390Z  INFO 164 --- [           main] f.u.simpletcfs.aspects.ControllerLogger  : TCFS:Rest-Controller: fr.univcotedazur.simpletcfs.controllers.RecipeController@352bccf:Returned listAllRecipes with value [CHOCOLALALA, DARK_TEMPTATION, SOO_CHOCOLATE]
+#14 55.70 
+#14 55.70 MockHttpServletRequest:
+#14 55.70       HTTP Method = GET
+#14 55.70       Request URI = /recipes
+#14 55.70        Parameters = {}
+#14 55.70           Headers = [Content-Type:"application/json;charset=UTF-8"]
+#14 55.70              Body = null
+#14 55.70     Session Attrs = {}
+#14 55.70 
+#14 55.70 Handler:
+#14 55.70              Type = fr.univcotedazur.simpletcfs.controllers.RecipeController
+#14 55.70            Method = fr.univcotedazur.simpletcfs.controllers.RecipeController#listAllRecipes()
+#14 55.70 
+#14 55.70 Async:
+#14 55.70     Async started = false
+#14 55.70      Async result = null
+#14 55.70 
+#14 55.70 Resolved Exception:
+#14 55.70              Type = null
+#14 55.70 
+#14 55.70 ModelAndView:
+#14 55.70         View name = null
+#14 55.70              View = null
+#14 55.70             Model = null
+#14 55.70 
+#14 55.70 FlashMap:
+#14 55.70        Attributes = null
+#14 55.70 
+#14 55.70 MockHttpServletResponse:
+#14 55.70            Status = 200
+#14 55.70     Error message = null
+#14 55.70           Headers = [Content-Type:"application/json"]
+#14 55.70      Content type = application/json
+#14 55.70              Body = ["CHOCOLALALA","DARK_TEMPTATION","SOO_CHOCOLATE"]
+#14 55.70     Forwarded URL = null
+#14 55.70    Redirected URL = null
+#14 55.70           Cookies = []
+#14 55.79 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.106 s -- in fr.univcotedazur.simpletcfs.controllers.RecipeWebAutoConfigureIT
+#14 55.79 [INFO] Running fr.univcotedazur.simpletcfs.cucumber.catalog.CatalogCucumberRunnerIT
+#14 56.00 2024-03-06T10:24:20.698Z  INFO 164 --- [           main] f.u.s.c.catalog.CatalogCucumberConfig    : Starting CatalogCucumberConfig using Java 17.0.10 with PID 164 (started by root in /opt/app)
+#14 56.00 2024-03-06T10:24:20.699Z  INFO 164 --- [           main] f.u.s.c.catalog.CatalogCucumberConfig    : No active profile set, falling back to 1 default profile: "default"
+#14 56.90 2024-03-06T10:24:21.548Z  INFO 164 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+#14 56.90 2024-03-06T10:24:21.551Z  INFO 164 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:db user=SA
+#14 56.90 2024-03-06T10:24:21.552Z  INFO 164 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+#14 56.90 2024-03-06T10:24:21.554Z  INFO 164 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+#14 56.90 2024-03-06T10:24:21.557Z  INFO 164 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+#14 56.90 2024-03-06T10:24:21.564Z  WARN 164 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+#14 57.10 2024-03-06T10:24:21.739Z  INFO 164 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+#14 57.10 Hibernate: 
+#14 57.10     drop table if exists activity cascade 
+#14 57.10 Hibernate: 
+#14 57.10     drop table if exists booking cascade 
+#14 57.10 Hibernate: 
+#14 57.10     drop table if exists customer cascade 
+#14 57.10 Hibernate: 
+#14 57.10     drop table if exists customer_cart cascade 
+#14 57.10 Hibernate: 
+#14 57.10     drop table if exists order_items cascade 
+#14 57.10 Hibernate: 
+#14 57.10     drop table if exists orders cascade 
+#14 57.10 Hibernate: 
+#14 57.10     drop sequence if exists activity_seq
+#14 57.10 Hibernate: 
+#14 57.10     drop sequence if exists booking_seq
+#14 57.10 Hibernate: 
+#14 57.10     drop sequence if exists customer_seq
+#14 57.10 Hibernate: 
+#14 57.10     drop sequence if exists orders_seq
+#14 57.10 Hibernate: 
+#14 57.10     create sequence activity_seq start with 1 increment by 50
+#14 57.10 Hibernate: 
+#14 57.10     create sequence booking_seq start with 1 increment by 50
+#14 57.10 Hibernate: 
+#14 57.10     create sequence customer_seq start with 1 increment by 50
+#14 57.10 Hibernate: 
+#14 57.10     create sequence orders_seq start with 1 increment by 50
+#14 57.10 Hibernate: 
+#14 57.10     create table activity (
+#14 57.10         nb_places integer not null,
+#14 57.10         prix float(24) not null,
+#14 57.10         id bigint not null,
+#14 57.10         nom_activite varchar(255),
+#14 57.10         primary key (id)
+#14 57.10     )
+#14 57.10 Hibernate: 
+#14 57.10     create table booking (
+#14 57.10         date_reservation date,
+#14 57.10         activity_id bigint,
+#14 57.10         customer_id bigint,
+#14 57.10         id bigint not null,
+#14 57.10         payment_receipt_id bigint,
+#14 57.10         primary key (id)
+#14 57.10     )
+#14 57.10 Hibernate: 
+#14 57.10     create table customer (
+#14 57.10         pointfidele integer not null,
+#14 57.10         id bigint not null,
+#14 57.10         credit_card varchar(255),
+#14 57.10         name varchar(255) unique,
+#14 57.10         primary key (id)
+#14 57.10     )
+#14 57.11 Hibernate: 
+#14 57.11     create table customer_cart (
+#14 57.11         quantity integer not null,
+#14 57.11         customer_id bigint not null,
+#14 57.11         cookie varchar(255) check (cookie in ('CHOCOLALALA','DARK_TEMPTATION','SOO_CHOCOLATE'))
+#14 57.11     )
+#14 57.11 Hibernate: 
+#14 57.11     create table order_items (
+#14 57.11         quantity integer not null,
+#14 57.11         order_id bigint not null,
+#14 57.11         cookie varchar(255) check (cookie in ('CHOCOLALALA','DARK_TEMPTATION','SOO_CHOCOLATE'))
+#14 57.11     )
+#14 57.11 Hibernate: 
+#14 57.11     create table orders (
+#14 57.11         price float(53) not null,
+#14 57.11         customer_id bigint,
+#14 57.11         id bigint not null,
+#14 57.11         pay_receipt_id varchar(255),
+#14 57.11         status varchar(255) check (status in ('CANCELLED','IN_PROGRESS','FINISHED')),
+#14 57.11         primary key (id)
+#14 57.11     )
+#14 57.11 Hibernate: 
+#14 57.11     alter table if exists booking 
+#14 57.11        add constraint FKn3p0dqhv1p3hl1gv6a2ltvsbu 
+#14 57.11        foreign key (activity_id) 
+#14 57.11        references activity
+#14 57.11 Hibernate: 
+#14 57.11     alter table if exists booking 
+#14 57.11        add constraint FKlnnelfsha11xmo2ndjq66fvro 
+#14 57.11        foreign key (customer_id) 
+#14 57.11        references customer
+#14 57.11 Hibernate: 
+#14 57.11     alter table if exists customer_cart 
+#14 57.11        add constraint FKeaqo5asykq66fm0cfdrhoiyv7 
+#14 57.11        foreign key (customer_id) 
+#14 57.11        references customer
+#14 57.11 Hibernate: 
+#14 57.11     alter table if exists order_items 
+#14 57.11        add constraint FKbioxgbv59vetrxe0ejfubep1w 
+#14 57.11        foreign key (order_id) 
+#14 57.11        references orders
+#14 57.11 Hibernate: 
+#14 57.11     alter table if exists orders 
+#14 57.11        add constraint FK624gtjin3po807j3vix093tlf 
+#14 57.11        foreign key (customer_id) 
+#14 57.11        references customer
+#14 59.71 2024-03-06T10:24:24.340Z  INFO 164 --- [           main] f.u.s.c.catalog.CatalogCucumberConfig    : Started CatalogCucumberConfig in 3.669 seconds (process running for 21.671)
+#14 59.71 
+#14 59.71 Scenario: The catalog contains 3 cookies # features/catalog/BrowsingCatalog.feature:5
+#14 59.71   When one check the catalog contents    # fr.univcotedazur.simpletcfs.cucumber.catalog.BrowsingCatalog.oneCheckTheCatalogContents()
+#14 59.73   Then there are 3 items in it           # fr.univcotedazur.simpletcfs.cucumber.catalog.BrowsingCatalog.thereAreItemsInIt(int)
+#14 59.74 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.951 s -- in fr.univcotedazur.simpletcfs.cucumber.catalog.CatalogCucumberRunnerIT
+#14 59.85 [INFO] 
+#14 59.85 [INFO] Results:
+#14 59.85 [INFO] 
+#14 59.85 [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0
+#14 59.85 [INFO] 
+#14 59.87 [INFO] 
+#14 59.87 [INFO] --- failsafe:3.1.2:verify (default) @ simpleTCFS ---
+#14 59.95 [INFO] ------------------------------------------------------------------------
+#14 59.95 [INFO] BUILD SUCCESS
+#14 59.95 [INFO] ------------------------------------------------------------------------
+#14 59.96 [INFO] Total time:  57.058 s
+#14 59.96 [INFO] Finished at: 2024-03-06T10:24:24Z
+#14 59.96 [INFO] ------------------------------------------------------------------------
+#14 DONE 60.0s
+
+#15 [stage-1 2/5] RUN addgroup dockergroup; adduser --ingroup dockergroup --disabled-password --system --shell /bin/false dockeruser
+#15 CACHED
+
+#16 [stage-1 3/5] WORKDIR /opt/app
+#16 CACHED
+
+#17 [stage-1 4/5] COPY --from=builder /opt/app/target/simpleTCFS-0.0.1-SNAPSHOT.jar ./app.jar
+#17 DONE 0.3s
+
+#18 [stage-1 5/5] RUN chown -R dockeruser:dockergroup /opt/app
+#18 DONE 0.6s
+
+#19 exporting to image
+#19 exporting layers
+#19 exporting layers 0.5s done
+#19 writing image sha256:9bc249e7dba075e3e2bb6db7e99dad3b7f804dee1e2dace9250b6f34b6034a54 done
+#19 naming to docker.io/pcollet/tcf-spring-backend done
+#19 DONE 0.5s
+
+View build details: docker-desktop://dashboard/build/default/default/qic1evloq6hfqifnlaf4e8xzx
+
+What's Next?
+  View a summary of image vulnerabilities and recommendations → docker scout quickview
+Compiling the TCF Spring CLI within a multi-stage docker build
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 transferring context: 2B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 769B done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/eclipse-temurin:17-jre-jammy
+#3 ...
+
+#4 [internal] load metadata for docker.io/library/eclipse-temurin:17-jdk-jammy
+#4 DONE 0.6s
+
+#3 [internal] load metadata for docker.io/library/eclipse-temurin:17-jre-jammy
+#3 DONE 0.6s
+
+#5 [stage-1 1/5] FROM docker.io/library/eclipse-temurin:17-jre-jammy@sha256:c1dd17f6b753f0af572069fb80dcacdc687f5d1ae3e05c98d5f699761b84a10a
+#5 DONE 0.0s
+
+#6 [builder 1/7] FROM docker.io/library/eclipse-temurin:17-jdk-jammy@sha256:721e57dee9ae41be4791f3c7da8250c41086551790fdd8b10c30bb4c9577ba8e
+#6 DONE 0.0s
+
+#7 [internal] load build context
+#7 transferring context: 2.58kB 0.0s done
+#7 DONE 0.0s
+
+#8 [builder 3/7] COPY .mvn/ .mvn
+#8 CACHED
+
+#9 [builder 4/7] COPY mvnw pom.xml ./
+#9 CACHED
+
+#10 [builder 7/7] RUN ./mvnw -B verify
+#10 CACHED
+
+#11 [builder 6/7] COPY ./src ./src
+#11 CACHED
+
+#12 [stage-1 4/5] COPY --from=builder /opt/app/target/cli-0.0.1-SNAPSHOT.jar ./app.jar
+#12 CACHED
+
+#13 [builder 5/7] RUN ./mvnw -B dependency:go-offline
+#13 CACHED
+
+#14 [stage-1 3/5] WORKDIR /opt/app
+#14 CACHED
+
+#15 [stage-1 2/5] RUN addgroup dockergroup; adduser --ingroup dockergroup --disabled-password --system --shell /bin/false dockeruser
+#15 CACHED
+
+#16 [builder 2/7] WORKDIR /opt/app
+#16 CACHED
+
+#17 [stage-1 5/5] RUN chown -R dockeruser:dockergroup /opt/app
+#17 CACHED
+
+#18 exporting to image
+#18 exporting layers done
+#18 writing image sha256:978f529cb0c5405632cdad25b48817d5799e6ebc6086c92e405fb678ebfc9d0a done
+#18 naming to docker.io/pcollet/tcf-spring-cli done
+#18 DONE 0.0s
+
+View build details: docker-desktop://dashboard/build/default/default/4vvs6us58vow7gmzr30xyi1ny
+
+What's Next?
+  View a summary of image vulnerabilities and recommendations → docker scout quickview
+Compiling the NestJS Bank system within a multi-stage docker build
+#0 building with "default" instance using docker driver
+
+#1 [internal] load .dockerignore
+#1 transferring context: 2B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.87kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/node:20.10.0-alpine3.19
+#3 ...
+
+#4 [auth] library/node:pull token for registry-1.docker.io
+#4 DONE 0.0s
+
+#5 [internal] load metadata for gcr.io/distroless/nodejs20-debian12:latest
+#5 DONE 0.8s
+
+#3 [internal] load metadata for docker.io/library/node:20.10.0-alpine3.19
+#3 DONE 1.7s
+
+#6 [build 1/7] FROM docker.io/library/node:20.10.0-alpine3.19@sha256:9e38d3d4117da74a643f67041c83914480b335c3bd44d37ccf5b5ad86cd715d1
+#6 DONE 0.0s
+
+#7 [prod 1/5] FROM gcr.io/distroless/nodejs20-debian12@sha256:a827f8a950b8b393862de98f1b2b37a96558bd33dde8ab8bdeac88f35cbead2e
+#7 resolve gcr.io/distroless/nodejs20-debian12@sha256:a827f8a950b8b393862de98f1b2b37a96558bd33dde8ab8bdeac88f35cbead2e 0.0s done
+#7 DONE 0.0s
+
+#8 [internal] load build context
+#8 transferring context: 1.18kB 0.0s done
+#8 DONE 0.0s
+
+#9 [build 3/7] COPY --chown=node:node package*.json ./
+#9 CACHED
+
+#10 [dev 5/5] COPY --chown=node:node . .
+#10 CACHED
+
+#11 [build 4/7] COPY --chown=node:node --from=dev /usr/src/app/node_modules ./node_modules
+#11 CACHED
+
+#12 [build 2/7] WORKDIR /usr/src/app
+#12 CACHED
+
+#13 [build 7/7] RUN npm ci --only=production && npm cache clean --force
+#13 CACHED
+
+#14 [build 6/7] RUN npm run build
+#14 CACHED
+
+#15 [prod 4/5] COPY --from=build /usr/src/app/dist ./dist
+#15 CACHED
+
+#16 [prod 2/5] WORKDIR /app
+#16 CACHED
+
+#17 [dev 4/5] RUN npm ci
+#17 CACHED
+
+#18 [prod 3/5] COPY --from=build /usr/src/app/node_modules ./node_modules
+#18 CACHED
+
+#19 [build 5/7] COPY --chown=node:node . .
+#19 CACHED
+
+#20 [prod 5/5] COPY docker-healthcheck/healthcheck.js .
+#20 CACHED
+
+#21 exporting to image
+#21 exporting layers done
+#21 writing image sha256:6e3eb49f8e7f834e8a829148a91a8ce227fb3b010688247e9a3744ab7236b35f done
+#21 naming to docker.io/pcollet/tcf-bank-service done
+#21 DONE 0.0s
+
+View build details: docker-desktop://dashboard/build/default/default/lr00blj1o025bxowke1mlqrh5
+
+What's Next?
+  View a summary of image vulnerabilities and recommendations → docker scout quickview
+** Done all

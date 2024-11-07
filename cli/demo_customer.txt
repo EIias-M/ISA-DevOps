@@ -1,0 +1,6 @@
+register kadoc 5251896983
+echo "ERROR 422: register a customer with an invalid credit card"
+register tatie 121212
+echo "ERROR 400: pay with a credit card that will be denied by the bank"
+register tatie 1234567890
+customers
